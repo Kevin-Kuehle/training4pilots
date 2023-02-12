@@ -1,0 +1,11 @@
+{
+  "name": "@t4p-project/frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Kevin Kühle",
+  "license": "ISC",
+  "dependencies": {
+   "@t4p-project/backend": "1.0.0"
+  }
+}
