@@ -1,5 +1,9 @@
 {
   "name": "t4p-project",
+  "private" : true,
+  "workspaces": [
+    "packages/*"
+  ],
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
