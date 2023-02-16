@@ -1,59 +1,52 @@
-<template>
-  <div class="header">
-    <div class="header__mobile-menu-button">
-      <div class="header__mobile-menu-button__icon">X</div>
-    </div>
-    <div class="header__inner">
-      <div class="logo">logo</div>
-      <div class="menu">
-        <MainMenu :items="menu" />
-      </div>
-      <div class="action">action button</div>
-      <div class="cart">warenkorb</div>
-    </div>
-  </div>
-</template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import MainMenu from "../main-menu/main-menu.vue";
+import { IconLogo, IconCart } from "@icons";
+import { ButtonBurger } from "@components/buttons";
 
-export default {
-  components: {
-    MainMenu,
-  },
-  setup() {
-    const menu = ref([
-      { name: "Home", link: "/" },
-      { name: "Menu-1", link: "/" },
-      { name: "Menu-2", link: "/" },
-      { name: "Menu-3", link: "/" },
-    ]);
-
-    return { menu };
-  },
-};
+const menu = ref([
+  { name: "Home", link: "/" },
+  { name: "Menu-1", link: "/" },
+  { name: "Menu-2", link: "/" },
+  { name: "Menu-3", link: "/" },
+]);
 </script>
+
+<template>
+  <header class="header">
+    <div class="header__mobile-menu-button-wrapper">
+      <ButtonBurger />
+    </div>
+    <div class="header__inner">
+      <div class="header__logo"><IconLogo /></div>
+      <div class="header__menu">
+        <MainMenu :items="menu" />
+      </div>
+      <div class="header__action"><Button /></div>
+      <div class="header__cart">
+        warenkorb <IconCart fill="var(--color-1)" />
+      </div>
+    </div>
+  </header>
+</template>
 
 <style lang="scss" scoped>
 @import "../../assets/scss/style.scss";
 .header {
-  background-color: grey;
   width: 100%;
   height: auto;
-
   display: grid;
-  grid-template-rows: 100% 0;
+  grid-template-rows: 50px auto;
   grid-template-columns: 100%;
-  grid-template-areas: "mobile-menu-button" "inner";
-  background-color: red;
+  grid-template-areas: "mobile-menu-button-wrapper" "inner";
+  background-color: var(--primary-color);
 
   &__inner {
-    position: absolute;
+    grid-area: inner;
     left: 0;
     top: 0;
     height: auto;
-    grid-area: inner;
     width: 100%;
     display: grid;
     grid-template-rows: auto;
@@ -61,11 +54,11 @@ export default {
     grid-auto-columns: auto;
     grid-template-areas: "logo" "menu" "action" "cart";
     border: 1px solid red;
-    background-color: darkblue;
+    background-color: rgb(62, 62, 104);
   }
 
-  &__mobile-menu-button {
-    grid-area: mobile-menu-button;
+  &__mobile-menu-button-wrapper {
+    grid-area: mobile-menu-button-wrapper;
     z-index: 1000;
     display: flex;
     flex-flow: row;
@@ -79,21 +72,32 @@ export default {
       border: 1px solid black;
     }
   }
-
-  .logo {
+  &__logo {
     grid-area: logo;
     padding: 30px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
   }
-  .menu {
+  &__menu {
     grid-area: menu;
   }
 
-  .action {
+  &__action {
     grid-area: action;
+    padding: 30px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    color: white;
   }
 
-  .cart {
+  &__cart {
     grid-area: cart;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 20px 0;
   }
 }
 </style>

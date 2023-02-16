@@ -35,7 +35,7 @@ export default {
   padding: 0;
   margin: 0;
   list-style: none;
-  gap: 50px;
+  gap: 20px;
 
   li {
     font-family: var(--font-menu);
