@@ -3,7 +3,7 @@
 import { ref } from "vue";
 import MainMenu from "../main-menu/main-menu.vue";
 import { IconLogo, IconCart } from "@icons";
-import { ButtonBurger } from "@components/buttons";
+import { ButtonMobileMenu } from "@components/buttons";
 
 const menu = ref([
   { name: "Home", link: "/" },
@@ -16,7 +16,7 @@ const menu = ref([
 <template>
   <header class="header">
     <div class="header__mobile-menu-button-wrapper">
-      <ButtonBurger />
+      <ButtonMobileMenu />
     </div>
     <div class="header__inner">
       <div class="header__logo"><IconLogo /></div>
