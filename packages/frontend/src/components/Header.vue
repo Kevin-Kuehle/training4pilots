@@ -1,9 +1,10 @@
-
 <script setup>
 import { ref } from "vue";
-import MainMenu from "../main-menu/main-menu.vue";
-import { IconLogo, IconCart } from "@icons";
+import MainMenu from "./main-menu/main-menu.vue";
 import { ButtonMobileMenu } from "@components/buttons";
+import { IconLogo, IconCart } from "@components/icons";
+
+const mobileMenuOpen = ref(true);
 
 const menu = ref([
   { name: "Home", link: "/" },
@@ -16,23 +17,26 @@ const menu = ref([
 <template>
   <header class="header">
     <div class="header__mobile-menu-button-wrapper">
-      <ButtonMobileMenu />
+      <ButtonMobileMenu @stateChanged="mobileMenuOpen = !mobileMenuOpen" />
     </div>
     <div class="header__inner">
       <div class="header__logo"><IconLogo /></div>
       <div class="header__menu">
         <MainMenu :items="menu" />
       </div>
-      <div class="header__action"><Button /></div>
-      <div class="header__cart">
+      <div class="header__action"></div>
+      <div v-if="mobileMenuOpen" class="header__cart">
         warenkorb <IconCart fill="var(--color-1)" />
       </div>
     </div>
   </header>
 </template>
 
+
+
+
 <style lang="scss" scoped>
-@import "../../assets/scss/style.scss";
+@import "@scss";
 .header {
   width: 100%;
   height: auto;
