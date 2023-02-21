@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from "vue";
-import MainMenu from "./main-menu/main-menu.vue";
+import MainMenu from "../main-menu/main-menu.vue";
 import { ButtonMobileMenu } from "@components/buttons";
 import { IconLogo, IconCart } from "@components/icons";
 
 const mobileMenuOpen = ref(true);
 
 const menu = ref([
-  { name: "Home", link: "/" },
+  { name: "Home1", link: "/" },
   { name: "Menu-1", link: "/" },
   { name: "Menu-2", link: "/" },
   { name: "Menu-3", link: "/" },
@@ -16,10 +16,10 @@ const menu = ref([
 
 <template>
   <header class="header">
-    <div class="header__mobile-menu-button-wrapper">
-      <ButtonMobileMenu @stateChanged="mobileMenuOpen = !mobileMenuOpen" />
-    </div>
-    <div class="header__inner">
+    <div class="header__wrapper">
+      <div class="header__mobile-menu-button-wrapper">
+        <ButtonMobileMenu @stateChanged="mobileMenuOpen = !mobileMenuOpen" />
+      </div>
       <div class="header__logo"><IconLogo /></div>
       <div class="header__menu">
         <MainMenu :items="menu" />
@@ -32,22 +32,19 @@ const menu = ref([
   </header>
 </template>
 
-
-
-
 <style lang="scss" scoped>
 @import "@scss";
+
 .header {
   width: 100%;
   height: auto;
-  display: grid;
-  grid-template-rows: 50px auto;
-  grid-template-columns: 100%;
-  grid-template-areas: "mobile-menu-button-wrapper" "inner";
   background-color: var(--primary-color);
 
-  &__inner {
-    grid-area: inner;
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "mobile-menu-button-wrapper" "inner";
     left: 0;
     top: 0;
     height: auto;
