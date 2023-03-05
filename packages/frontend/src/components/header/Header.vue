@@ -3,6 +3,7 @@ import { ref } from "vue";
 import MainMenu from "../main-menu/main-menu.vue";
 import { ButtonMobileMenu } from "@components/buttons";
 import { IconLogo, IconCart } from "@components/icons";
+import { useViewStore } from "@store/view";
 
 const mobileMenuOpen = ref(true);
 
@@ -15,17 +16,19 @@ const menu = ref([
 </script>
 
 <template>
-  <header class="header">
-    <div class="header__wrapper">
-      <div class="header__mobile-menu-button-wrapper">
-        <ButtonMobileMenu @stateChanged="mobileMenuOpen = !mobileMenuOpen" />
-      </div>
-      <div class="header__logo"><IconLogo /></div>
-      <div class="header__menu">
+  <header class="c-header">
+    <div class="c-header__logo"><IconLogo /></div>
+    <div class="c-header__mobile-menu-button-wrapper">
+      <ButtonMobileMenu />
+    </div>
+    <!-- menu window -->
+    <div class="c-header__wrapper">
+      <div class="c-header__logo"><IconLogo /></div>
+      <div class="c-header__menu">
         <MainMenu :items="menu" />
       </div>
-      <div class="header__action"></div>
-      <div v-if="mobileMenuOpen" class="header__cart">
+      <div class="c-header__action"></div>
+      <div v-if="mobileMenuOpen" class="c-header__cart">
         warenkorb <IconCart fill="var(--color-1)" />
       </div>
     </div>
@@ -35,7 +38,13 @@ const menu = ref([
 <style lang="scss" scoped>
 @import "@scss";
 
-.header {
+.test {
+  background-color: red;
+  height: 600px;
+  width: 100%;
+}
+
+.c-header {
   width: 100%;
   height: auto;
   background-color: var(--primary-color);
