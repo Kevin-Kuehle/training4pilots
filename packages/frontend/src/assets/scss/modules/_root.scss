@@ -25,6 +25,25 @@
   --grid-menu-item-gap: 10px;
 }
 
+// heights
+:root {
+  --height-mobile-header: 60px;
+}
+
+// z-indexes
+:root {
+  --z-index-header: 1000;
+  --z-index-header-sub-row: 1200;
+  --z-index-menu: 1100;
+  --z-index-modal: 5000;
+  --z-index-overlay: 6000;
+}
+
+// widths
+:root {
+ --width-mobile-button: 70px;
+}
+
 // breakpoints info: see scss function _breakpoint()
 :root {
   --breakpoint-s: 320px;

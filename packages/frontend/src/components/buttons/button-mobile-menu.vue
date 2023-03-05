@@ -4,7 +4,7 @@
     aria-controls="primary-navigation"
     :aria-expanded="isActive ? 'true' : 'false'"
     :data-state="isActive ? 'opened' : 'closed'"
-    @click="isActive = !isActive"
+    @click="changeState"
   >
     <svg
       stroke="var(--button-color)"
@@ -24,9 +24,16 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watchEffect, defineEmits } from "vue";
+
+const emit = defineEmits(["change"]);
 
 const isActive = ref(false);
+
+const changeState = () => {
+  isActive.value = !isActive.value;
+  emit("change", isActive.value);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -43,6 +50,7 @@ const isActive = ref(false);
 
 .button-mobile-menu .hamburger {
   transition: translate 1s, rotate 1s;
+  max-height: 45px;
 }
 
 .button-mobile-menu[aria-expanded="true"] .hamburger {

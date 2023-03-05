@@ -66,3 +66,6 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+## Custom
+[SVG Cleaner](https://jakearchibald.github.io/svgomg/)

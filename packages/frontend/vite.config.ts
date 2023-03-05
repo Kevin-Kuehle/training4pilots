@@ -13,7 +13,8 @@ export default defineConfig({
       "@icons": path.resolve(__dirname, "src/components/icons/"),
       "@components": path.resolve(__dirname, "src/components"),
       "@scss": path.resolve(__dirname, "src/assets/scss/style.scss"),
-      "@store": path.resolve(__dirname, "src/store"),
+      "@stores": path.resolve(__dirname, "./src/stores"),
+      "@configs": path.resolve(__dirname, "./src/assets/configs"),
     },
   },
 });
