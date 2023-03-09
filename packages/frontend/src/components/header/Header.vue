@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import MainMenu from "../main-menu/main-menu.vue";
+import { MainMenu } from "@components/main-menu";
 import { ButtonMobileMenu } from "@components/buttons";
 import { IconLogo, IconCart } from "@components/icons";
 import { useDeviceStore } from "@stores";
@@ -18,14 +18,44 @@ function mobileMenuStateChanged(state) {
 
 const menu = ref([
   { name: "Home1", link: "/" },
-  { name: "Menu-1", link: "/" },
+  {
+    name: "Submenu Titel +",
+    link: "/",
+    subMenu: [
+      { name: "SUBMENU-level-1", link: "/" },
+      { name: "SUBMENU-level-1", link: "/" },
+      { name: "SUBMENU-level-1", link: "/" },
+      { name: "SUBMENU-level-1", link: "/" },
+      {
+        name: "SUBMENU-3",
+        link: "/",
+        subMenu: [
+          { name: "SUBMENU-level-2", link: "/" },
+          { name: "SUBMENU-level-2", link: "/" },
+          { name: "SUBMENU-level-2", link: "/" },
+          { name: "SUBMENU-level-2", link: "/" },
+          {
+            name: "SUBMENU-level-2",
+            link: "/",
+            subMenu: [
+              { name: "SUBMENU-level-3-💘", link: "/" },
+              { name: "SUBMENU-level-3-💘", link: "/" },
+              { name: "SUBMENU-level-3-💘", link: "/" },
+              { name: "SUBMENU-level-3-💘", link: "/" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
   { name: "Menu-2", link: "/" },
   { name: "Menu-3", link: "/" },
-  { name: "Menu-3", link: "/" },
-  { name: "Menu-3", link: "/" },
-  { name: "Menu-3", link: "/" },
-  { name: "Menu-3", link: "/" },
-  { name: "Menu-3", link: "/" },
+  { name: "Menu-4", link: "/" },
+  { name: "Menu-5", link: "/" },
+  { name: "Menu-6", link: "/" },
+  { name: "Menu-7", link: "/" },
+  { name: "Menu-8", link: "/" },
+  { name: "Menu-9", link: "/" },
 ]);
 </script>
 

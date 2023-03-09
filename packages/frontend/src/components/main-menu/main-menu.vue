@@ -1,26 +1,27 @@
-<template>
-  <ul class="main-menu">
-    <li v-for="item in items">{{ item.name }}</li>
-  </ul>
-</template>
+<script setup>
+import { toRefs, toRef, defineProps } from "vue";
+import { SubMenu } from "@components/main-menu";
 
-<script>
-import { toRefs, toRef } from "vue";
-
-export default {
-  props: {
-    items: {
-      type: Array,
-      required: true,
-    },
+defineProps({
+  items: {
+    type: Array,
+    required: true,
   },
-  setup(props) {
-    // const { items } = toRefs(props);
-    // console.log(items.value);
-    // return { items };
-  },
-};
+});
 </script>
+
+<template>
+  <nav class="main-menu">
+    <template v-for="item in items">
+      <template v-if="item?.subMenu">
+        <SubMenu :name="item.name" :subMenu="item.subMenu"></SubMenu>
+      </template>
+      <template v-else>
+        <a :href="item.link">{{ item.name }}</a>
+      </template>
+    </template>
+  </nav>
+</template>
 
 <style lang="scss">
 @import "../../assets/scss/style.scss";
@@ -37,7 +38,7 @@ export default {
   list-style: none;
   gap: 20px;
 
-  li {
+  a {
     font-family: var(--font-menu);
     text-transform: uppercase;
 
