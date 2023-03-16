@@ -1,8 +1,8 @@
 $breakpoints: (
-  "s": 320px,
-  "m": 375px,
-  "l": 425px,
-  "xl": 768px,
+  "S": 320px,
+  "M": 375px,
+  "L": 425px,
+  "XL": 768px,
   "XXL": 1024px,
   "XXXL": 1440px,
 );
@@ -14,7 +14,7 @@ $breakpoints: (
 
 // create breakpoint mixin with variable body
 @mixin breakpoint($breakpoint) {
-  @media screen and (max-width: _breakpoint($breakpoint)) {
+  @media screen and (min-width: _breakpoint($breakpoint)) {
     @content;
   }
 }

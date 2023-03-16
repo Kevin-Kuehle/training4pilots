@@ -10,6 +10,16 @@
   --font-main: "Inter", sans-serif;
 }
 
+// font sizes
+:root {
+ --font-size-menu: 1.2rem;
+}
+
+
+
+
+
+
 // colors
 :root {
   --primary-color: #1c242d;
@@ -17,6 +27,7 @@
   --light-color-full: #fff;
   --dark-color-full: #1a1a1a;
   --color-1: #236bbd;
+  --color-menu: var(--dark-color-full);
 }
 
 // gaps

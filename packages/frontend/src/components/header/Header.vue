@@ -12,50 +12,33 @@ let eventWindowResize;
 let isOpen = ref(false);
 
 function mobileMenuStateChanged(state) {
-  console.log(`devlog: isOpen`, state);
   isOpen.value = state;
 }
 
 const menu = ref([
-  { name: "Home1", link: "/" },
+  { name: "Startseite", link: "/" },
   {
-    name: "Submenu Titel +",
+    name: "Sprechfunkzeugnisse",
     link: "/",
     subMenu: [
-      { name: "SUBMENU-level-1", link: "/" },
-      { name: "SUBMENU-level-1", link: "/" },
-      { name: "SUBMENU-level-1", link: "/" },
-      { name: "SUBMENU-level-1", link: "/" },
-      {
-        name: "SUBMENU-3",
-        link: "/",
-        subMenu: [
-          { name: "SUBMENU-level-2", link: "/" },
-          { name: "SUBMENU-level-2", link: "/" },
-          { name: "SUBMENU-level-2", link: "/" },
-          { name: "SUBMENU-level-2", link: "/" },
-          {
-            name: "SUBMENU-level-2",
-            link: "/",
-            subMenu: [
-              { name: "SUBMENU-level-3-💘", link: "/" },
-              { name: "SUBMENU-level-3-💘", link: "/" },
-              { name: "SUBMENU-level-3-💘", link: "/" },
-              { name: "SUBMENU-level-3-💘", link: "/" },
-            ],
-          },
-        ],
-      },
+      { name: "BZF-I", link: "/" },
+      { name: "BZF-II", link: "/" },
+      { name: "AFZ", link: "/" },
+      { name: "Prüfungsablauf", link: "/" },
     ],
   },
-  { name: "Menu-2", link: "/" },
-  { name: "Menu-3", link: "/" },
-  { name: "Menu-4", link: "/" },
-  { name: "Menu-5", link: "/" },
-  { name: "Menu-6", link: "/" },
-  { name: "Menu-7", link: "/" },
-  { name: "Menu-8", link: "/" },
-  { name: "Menu-9", link: "/" },
+  {
+    name: "Kursangebote",
+    link: "/",
+    subMenu: [
+      { name: "BZF-I", link: "/" },
+      { name: "BZF-II", link: "/" },
+      { name: "AFZ", link: "/" },
+      { name: "Prüfungsablauf", link: "/" },
+    ],
+  },
+  { name: "Über Uns", link: "/" },
+  { name: "Kontakt", link: "/" },
 ]);
 </script>
 
@@ -148,6 +131,12 @@ svg {
     &.open {
       left: -100%;
       opacity: 0;
+    }
+
+    /* Desktop */
+    @include breakpoint(XL) {
+      grid-template-areas: "logo menu cart action";
+      grid-template-columns: 300px 1fr 10px auto;
     }
   }
 

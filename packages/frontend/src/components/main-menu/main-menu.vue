@@ -38,9 +38,19 @@ defineProps({
   list-style: none;
   gap: 20px;
 
+  > * {
+    text-align: left;
+  }
+
   a {
     font-family: var(--font-menu);
+    font-size: var(--font-size-menu);
     text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-menu);
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
 
     &:hover {
       cursor: pointer;
