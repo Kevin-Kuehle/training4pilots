@@ -6,7 +6,7 @@ export const useDeviceStore = defineStore("device", {
   state: () => ({
     breakpoint: ref(null),
     isScrolled: ref(false),
-    scrollTop : ref(0),
+    scrollTop: ref(0),
   }),
   getters: {
     isMobile: (state) => state.breakpoint <= BREAKPOINTS.L,
