@@ -1,0 +1,12 @@
+{
+ "favorites.resources": [
+  {
+   "filePath": "packages\\frontend\\src\\App.vue",
+   "group": "Default"
+  },
+  {
+   "filePath": "packages\\frontend\\src\\components\\header\\Header.vue",
+   "group": "Default"
+  }
+ ]
+}

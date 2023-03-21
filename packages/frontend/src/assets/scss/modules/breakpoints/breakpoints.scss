@@ -14,7 +14,7 @@ $breakpoints: (
 
 // create breakpoint mixin with variable body
 @mixin breakpoint($breakpoint) {
-  @media screen and (min-width: _breakpoint($breakpoint)) {
+  @media screen and (width > _breakpoint($breakpoint)) {
     @content;
   }
 }

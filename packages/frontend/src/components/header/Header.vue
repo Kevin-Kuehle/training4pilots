@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 import { MainMenu } from "@components/main-menu";
 import { ButtonMobileMenu } from "@components/buttons";
 import { IconLogo, IconCart } from "@components/icons";
@@ -44,11 +44,14 @@ const menu = ref([
 
 <template>
   <header class="c-header">
-    <div v-if="!deviceStore.isDesktop" class="c-header__mobile-logo">
+    <div
+      v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
+      class="c-header__mobile-logo"
+    >
       <IconLogo />
     </div>
     <div
-      v-if="!deviceStore.isDesktop"
+      v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-menu-button-wrapper"
     >
       <ButtonMobileMenu @change="mobileMenuStateChanged" />
@@ -85,6 +88,11 @@ svg {
   grid-template-rows: var(--height-mobile-header);
   grid-template-areas: "mobileLogo mobileButton" "mobile-menu-wrapper mobile-menu-wrapper";
   transform: all 0.2 linear;
+
+  @include breakpoint(XXL) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 
   &__mobile-logo {
     grid-area: mobileLogo;
@@ -134,9 +142,14 @@ svg {
     }
 
     /* Desktop */
-    @include breakpoint(XL) {
+    @include breakpoint(XXL) {
+      box-shadow: initial;
+      position: initial;
+      top: initial;
+      grid-template-columns: 250px 1fr auto auto;
+      grid-template-rows: auto;
       grid-template-areas: "logo menu cart action";
-      grid-template-columns: 300px 1fr 10px auto;
+      grid-template-columns: 300px 1fr 100px 100px;
     }
   }
 
@@ -146,10 +159,18 @@ svg {
     display: flex;
     flex-flow: row;
     justify-content: center;
+
+    @include breakpoint(XXL) {
+      padding: 0;
+    }
   }
   &__menu {
     grid-area: menu;
     padding: 30px 0;
+
+    @include breakpoint(XXL) {
+      padding: 0;
+    }
   }
 
   &__action {

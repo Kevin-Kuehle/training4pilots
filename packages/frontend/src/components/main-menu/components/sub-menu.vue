@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import { SubMenu } from "@components/main-menu";
 import { IconCross } from "@icons";
 

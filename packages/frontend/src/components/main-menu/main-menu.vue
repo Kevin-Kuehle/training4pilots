@@ -1,5 +1,5 @@
 <script setup>
-import { toRefs, toRef, defineProps } from "vue";
+import { toRefs, toRef } from "vue";
 import { SubMenu } from "@components/main-menu";
 
 defineProps({
@@ -24,7 +24,7 @@ defineProps({
 </template>
 
 <style lang="scss">
-@import "../../assets/scss/style.scss";
+@import "@scss";
 
 .main-menu {
   display: flex;
@@ -55,6 +55,19 @@ defineProps({
     &:hover {
       cursor: pointer;
       color: var(--secondary-color);
+    }
+  }
+
+  @include breakpoint(XXL) {
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+    width: auto;
+    flex-direction: row;
+    gap: 10px;
+
+    a {
+      width: auto;
     }
   }
 }

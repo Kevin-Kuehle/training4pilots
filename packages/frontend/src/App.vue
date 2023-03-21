@@ -27,8 +27,6 @@ onUnmounted(() => {
 });
 
 function handleWindowResize(size) {
-  console.log("myLog", size);
-
   if (size <= BREAKPOINTS.S) {
     deviceStore.breakpoint = BREAKPOINTS.S;
   } else if (size <= BREAKPOINTS.M) {
@@ -60,6 +58,4 @@ function handleScrolling(scroll) {
   <Header />
 </template>
 
-<style scoped lang="scss">
-@import "@scss";
-</style>
+<style scoped lang="scss"></style>

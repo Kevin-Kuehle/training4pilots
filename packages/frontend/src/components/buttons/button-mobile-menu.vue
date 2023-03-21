@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref, watchEffect, defineEmits } from "vue";
+import { ref, watchEffect } from "vue";
 
 const emit = defineEmits(["change"]);
 
