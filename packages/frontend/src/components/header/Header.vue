@@ -31,7 +31,10 @@ const menu = ref([
     name: "Kursangebote",
     link: "/",
     subMenu: [
-      { name: "BZF-I", link: "/" },
+      { name: "BZF-I 💕", link: "/", subMenu: [{ name: "BZF-I", link: "/" }] },
+      { name: "BZF-II", link: "/" },
+      { name: "AFZ", link: "/" },
+      { name: "Prüfungsablauf", link: "/" },
       { name: "BZF-II", link: "/" },
       { name: "AFZ", link: "/" },
       { name: "Prüfungsablauf", link: "/" },
@@ -150,6 +153,7 @@ svg {
       grid-template-rows: auto;
       grid-template-areas: "logo menu cart action";
       grid-template-columns: 300px 1fr 100px 100px;
+      overflow: visible;
     }
   }
 

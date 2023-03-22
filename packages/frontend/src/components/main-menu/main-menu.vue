@@ -14,7 +14,7 @@ defineProps({
   <nav class="main-menu">
     <template v-for="item in items">
       <template v-if="item?.subMenu">
-        <SubMenu :name="item.name" :subMenu="item.subMenu"></SubMenu>
+        <SubMenu lvl="0" :name="item.name" :subMenu="item.subMenu"></SubMenu>
       </template>
       <template v-else>
         <a :href="item.link">{{ item.name }}</a>
@@ -37,6 +37,7 @@ defineProps({
   margin: 0;
   list-style: none;
   gap: 20px;
+  position: relative;
 
   > * {
     text-align: left;
