@@ -3,6 +3,7 @@ import { Header } from "@components";
 import { ref, onMounted, onUnmounted } from "vue";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
+import { Icon } from "@components";
 
 const deviceStore = useDeviceStore();
 
@@ -56,6 +57,7 @@ function handleScrolling(scroll) {
 
 <template>
   <Header />
+  <Icon color="blue" size="50" name="close"></Icon>
 </template>
 
 <style scoped lang="scss"></style>

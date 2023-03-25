@@ -1,19 +1,18 @@
 <template>
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-    <g
-      id="SVGRepo_tracerCarrier"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    ></g>
-    <g id="SVGRepo_iconCarrier">
-      <path
-        d="M16 8L8 16M12 12L16 16M8 8L10 10"
-        stroke="#000000"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </g>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+    viewBox="0 0 11 11"
+  >
+    <path
+      d="M19.406 18.315h11.729v11.729H19.406z"
+      style="fill: none"
+      transform="translate(-16.569 -15.638) scale(.8538)"
+    />
+    <path
+      d="m16 8-8 8m4-4 4 4M8 8l2 2"
+      style="fill: none; fill-rule: nonzero; stroke: #000; stroke-width: 1.5px"
+      transform="matrix(1 0 0 1 -6.993 -6.993)"
+    />
   </svg>
 </template>

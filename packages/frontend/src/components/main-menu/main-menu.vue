@@ -14,7 +14,13 @@ defineProps({
   <nav class="main-menu">
     <template v-for="item in items">
       <template v-if="item?.subMenu">
-        <SubMenu lvl="0" :name="item.name" :subMenu="item.subMenu"></SubMenu>
+        <SubMenu
+          :preIcon="item?.preIcon ? item?.preIcon : null"
+          :suffIcon="item?.suffIcon ? item?.suffIcon : null"
+          lvl="0"
+          :name="item.name"
+          :subMenu="item.subMenu"
+        ></SubMenu>
       </template>
       <template v-else>
         <a :href="item.link">{{ item.name }}</a>

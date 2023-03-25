@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { MainMenu } from "@components/main-menu";
 import { ButtonMobileMenu } from "@components/buttons";
-import { IconLogo, IconCart } from "@components/icons";
+import { Icon } from "@components";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
 
@@ -19,9 +19,14 @@ const menu = ref([
   { name: "Startseite", link: "/" },
   {
     name: "Sprechfunkzeugnisse",
+
+    suffIcon: "close",
     link: "/",
     subMenu: [
-      { name: "BZF-I", link: "/" },
+      { preIcon: "arrowDown", name: "BZF-I", link: "/", suffIcon: "arrowDown" },
+      { name: "BZF-II", link: "/" },
+      { name: "AFZ", link: "/" },
+      { name: "Prüfungsablauf", link: "/" },
       { name: "BZF-II", link: "/" },
       { name: "AFZ", link: "/" },
       { name: "Prüfungsablauf", link: "/" },
@@ -31,7 +36,12 @@ const menu = ref([
     name: "Kursangebote",
     link: "/",
     subMenu: [
-      { name: "BZF-I 💕", link: "/", subMenu: [{ name: "BZF-I", link: "/" }] },
+      {
+        preIcon: "close",
+        name: "BZF-I",
+        link: "/",
+        subMenu: [{ name: "BZF-I", link: "/" }],
+      },
       { name: "BZF-II", link: "/" },
       { name: "AFZ", link: "/" },
       { name: "Prüfungsablauf", link: "/" },
@@ -51,7 +61,7 @@ const menu = ref([
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-logo"
     >
-      <IconLogo />
+      <Icon name="logo" size="200" />
     </div>
     <div
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
@@ -62,14 +72,14 @@ const menu = ref([
     <!-- menu window -->
     <div class="c-header__wrapper" :class="{ open: isOpen }">
       <div v-if="deviceStore.isDesktop" class="c-header__logo">
-        <IconLogo />
+        <Icon name="logo" size="auto" />
       </div>
       <div class="c-header__menu">
         <MainMenu :items="menu" />
       </div>
       <div class="c-header__action"></div>
       <div class="c-header__cart">
-        warenkorb <IconCart fill="var(--color-1)" />
+        warenkorb <Icon name="cart" size="auto" color="var(--color-1)" />
       </div>
     </div>
   </header>
