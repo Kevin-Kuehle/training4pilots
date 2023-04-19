@@ -20,11 +20,26 @@ const menu = ref([
   {
     name: "Sprechfunkzeugnisse",
 
-    suffIcon: "close",
     link: "/",
     subMenu: [
-      { preIcon: "arrowDown", name: "BZF-I", link: "/", suffIcon: "arrowDown" },
-      { name: "BZF-II", link: "/" },
+      { name: "BZF-I", link: "/" },
+      {
+        name: "BZF-II",
+        link: "/",
+        subMenu: [
+          {
+            name: "BZF-I",
+            link: "/",
+            subMenu: [{ name: "BZF-I", link: "/" }],
+          },
+          { name: "BZF-II", link: "/" },
+          { name: "AFZ", link: "/" },
+          { name: "Prüfungsablauf", link: "/" },
+          { name: "BZF-II", link: "/" },
+          { name: "AFZ", link: "/" },
+          { name: "Prüfungsablauf", link: "/" },
+        ],
+      },
       { name: "AFZ", link: "/" },
       { name: "Prüfungsablauf", link: "/" },
       { name: "BZF-II", link: "/" },
@@ -37,7 +52,6 @@ const menu = ref([
     link: "/",
     subMenu: [
       {
-        preIcon: "close",
         name: "BZF-I",
         link: "/",
         subMenu: [{ name: "BZF-I", link: "/" }],
@@ -61,7 +75,7 @@ const menu = ref([
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-logo"
     >
-      <Icon name="logo" size="200" />
+      <Icon name="logo" :size="200" />
     </div>
     <div
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"

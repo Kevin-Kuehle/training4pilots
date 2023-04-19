@@ -18,6 +18,8 @@
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.6",
     "pinia": "^2.0.28",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.26.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

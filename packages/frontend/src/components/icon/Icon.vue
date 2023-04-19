@@ -10,7 +10,7 @@ const props = defineProps({
     type: String,
   },
   size: {
-    type: Number,
+    type: String || Number,
   },
   lvl: {
     type: Number,

@@ -22,7 +22,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  console.log("unmounted");
   window.removeEventListener("resize", eventWindowResize);
   window.removeEventListener("scroll", eventWindowScroll);
 });
@@ -44,7 +43,6 @@ function handleWindowResize(size) {
 }
 
 function handleScrolling(scroll) {
-  console.log(`devlog: scroll`, scroll);
   if (scroll > 0) {
     deviceStore.isScrolled = true;
     deviceStore.scrollTop = scroll;
@@ -57,7 +55,7 @@ function handleScrolling(scroll) {
 
 <template>
   <Header />
-  <Icon color="blue" size="50" name="close"></Icon>
+  <Icon color="blue" size="50" name="cross"></Icon>
 </template>
 
 <style scoped lang="scss"></style>

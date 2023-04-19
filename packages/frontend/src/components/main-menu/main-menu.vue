@@ -1,6 +1,8 @@
 <script setup>
-import { toRefs, toRef } from "vue";
-import { SubMenu } from "@components/main-menu";
+import { toRefs, toRef, computed } from "vue";
+import { SubMenu, MenuItem } from "@components/main-menu";
+import { useDeviceStore } from "@stores";
+import { BREAKPOINTS } from "@configs";
 
 defineProps({
   items: {
@@ -8,22 +10,32 @@ defineProps({
     required: true,
   },
 });
+
+const deviceStore = useDeviceStore();
+
+const subMenuIconHandler = computed(() => {
+  if (deviceStore.breakpoint === BREAKPOINTS.XXXL) {
+    return "arrowDown";
+  } else {
+    return "cross";
+  }
+});
 </script>
 
 <template>
-  <nav class="main-menu">
+  <nav class="c-main-menu">
     <template v-for="item in items">
       <template v-if="item?.subMenu">
         <SubMenu
           :preIcon="item?.preIcon ? item?.preIcon : null"
-          :suffIcon="item?.suffIcon ? item?.suffIcon : null"
-          lvl="0"
+          :suffIcon="subMenuIconHandler"
+          :lvl="0"
           :name="item.name"
           :subMenu="item.subMenu"
         ></SubMenu>
       </template>
       <template v-else>
-        <a :href="item.link">{{ item.name }}</a>
+        <MenuItem :lvl="0" :item="item" />
       </template>
     </template>
   </nav>
@@ -32,7 +44,7 @@ defineProps({
 <style lang="scss">
 @import "@scss";
 
-.main-menu {
+.c-main-menu {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

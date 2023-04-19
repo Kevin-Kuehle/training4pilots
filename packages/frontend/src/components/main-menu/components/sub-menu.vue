@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
-import { SubMenu } from "@components/main-menu";
-import { IconClose, IconArrowDown, IconArrowRight } from "@icons";
+import { SubMenu, MenuItem } from "@components/main-menu";
+import { IconCross, IconArrowDown, IconArrowRight } from "@icons";
 import { Icon } from "@components";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
@@ -55,7 +55,7 @@ function clickHandler($event) {
     @mouseenter="isOpen = true"
     @click="clickHandler"
     class="c-sub-menu"
-    :class="{ 'c-sub-menu__nav_item': lvl > 0 }"
+    :class="['c-sub-menu-lvl-' + lvl]"
   >
     <button
       ref="menuButton"
@@ -69,14 +69,19 @@ function clickHandler($event) {
       >
         <Icon :name="preIcon" size="auto" color="black" />
       </div>
-
-      <div class="c-sub-menu__button_name">{{ name }}</div>
+      <!-- name -->
+      <div
+        class="c-sub-menu__button_name"
+        :class="['c-sub-menu__button_name_lvl-' + lvl]"
+      >
+        {{ name }}
+      </div>
 
       <!-- suf-icon -->
       <div
         v-if="suffIcon"
         class="c-sub-menu__button__icon c-sub-menu__button__icon__suff"
-        :class="{ 'c-sub-menu__button_icon--open': isOpen }"
+        :class="{ 'c-sub-menu__button__icon--open': isOpen }"
       >
         <Icon :name="suffIcon" size="auto" color="black" />
       </div>
@@ -95,10 +100,12 @@ function clickHandler($event) {
             :lvl="nextLevel"
             :name="item.name"
             :subMenu="item.subMenu"
+            :preIcon="item.preIcon"
+            suffIcon="cross"
           ></SubMenu>
         </template>
         <template v-else>
-          <a class="c-sub-menu__nav_item" :href="item.link">{{ item.name }}</a>
+          <MenuItem :lvl="nextLevel" :item="item" />
         </template>
       </template>
     </div>
@@ -109,10 +116,19 @@ function clickHandler($event) {
 @import "@scss";
 .c-sub-menu {
   display: flex;
+  width: auto;
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
   position: relative;
+  padding: 10px 0;
+
+  &-lvl {
+    &-1 {
+      width: 100%;
+      text-align: left;
+    }
+  }
 
   &__nav {
     display: block;
@@ -141,6 +157,10 @@ function clickHandler($event) {
         left: 0;
         top: 100%;
       }
+      // scss select all lvl in range from 1 to 20
+      &--lvl-1 {
+        border: 5px solid red;
+      }
 
       &--lvl-1 {
         left: 100%;
@@ -159,14 +179,6 @@ function clickHandler($event) {
       flex: 1;
       width: 100%;
       border: 1px solid red;
-
-      :is(div) {
-        // padding: 0.8rem 1rem;
-      }
-
-      :is(a) {
-        // padding: 0.8rem 1rem;
-      }
     }
 
     &--open {
@@ -206,11 +218,12 @@ function clickHandler($event) {
       svg {
         width: 100%;
         height: auto;
+        max-height: 18px;
       }
     }
 
     &__suff-icon {
-      grid-template-areas: ". name suff-icon";
+      grid-template-areas: "name name suff-icon";
     }
 
     &__pre-icon {
@@ -229,6 +242,15 @@ function clickHandler($event) {
     &_name {
       grid-area: name;
       text-align: center;
+
+      &_lvl {
+        &-1,
+        &-2,
+        &-3 {
+          text-align: left;
+          border: 2px solid red;
+        }
+      }
     }
   }
 }
