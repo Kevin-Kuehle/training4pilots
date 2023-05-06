@@ -22,8 +22,8 @@ const props = defineProps({
   text-align: left;
   white-space: nowrap;
   flex: 1;
-  width: 100%;
   text-align: center;
+  padding: var(--padding-menu-item);
 
   &_lvl {
     &-1,
@@ -34,11 +34,11 @@ const props = defineProps({
 
     :is(div) {
       border: 1px solid rgb(108, 23, 187);
-      padding: 0.8rem 1rem;
+      // padding: 0.8rem 1rem;
     }
 
     :is(a) {
-      padding: 0.8rem 1rem;
+      // padding: 0.8rem 1rem;
     }
   }
 

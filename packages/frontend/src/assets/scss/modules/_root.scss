@@ -1,9 +1,5 @@
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+
 
 //fonts
 :root {
@@ -79,6 +75,15 @@
     --margin-title-top: 20px;
     --margin-title-bottom: 40px;
   }
+}
+
+
+// paddings
+:root {
+  // menu rules
+  --padding-menu-item: 7px 0;
+  --padding-menu-submenu: 7px 0;
+
 }
 
 @media (prefers-color-scheme: dark) {

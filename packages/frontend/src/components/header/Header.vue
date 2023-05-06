@@ -194,7 +194,7 @@ svg {
   }
   &__menu {
     grid-area: menu;
-    padding: 30px 0;
+    padding: 30px 30px;
 
     @include breakpoint(XXL) {
       padding: 0;
@@ -215,7 +215,13 @@ svg {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: center;
     padding: 20px 0;
+
+    svg {
+      max-height: 24px;
+      width: auto;
+    }
   }
 }
 </style>

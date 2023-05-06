@@ -17,4 +17,7 @@ export default defineConfig({
       "@configs": path.resolve(__dirname, "./src/assets/configs"),
     },
   },
+  css: {
+   devSourcemap: true,
+  },
 });

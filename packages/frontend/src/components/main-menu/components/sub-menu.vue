@@ -41,6 +41,8 @@ const subMenuButtonClasses = computed(() => {
 });
 
 function clickHandler($event) {
+  console.log(`devlog: click`, $event.target);
+
   if (
     !ref.menuButton?.contains($event.target) ||
     $event.target === ref.menuButton
@@ -121,11 +123,10 @@ function clickHandler($event) {
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  padding: 10px 0;
+  padding: var(--padding-menu-submenu);
 
   &-lvl {
     &-1 {
-      width: 100%;
       text-align: left;
     }
   }
@@ -248,7 +249,7 @@ function clickHandler($event) {
         &-2,
         &-3 {
           text-align: left;
-          border: 2px solid red;
+          color: red;
         }
       }
     }

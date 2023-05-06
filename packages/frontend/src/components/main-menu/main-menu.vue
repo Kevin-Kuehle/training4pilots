@@ -48,7 +48,7 @@ const subMenuIconHandler = computed(() => {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -59,22 +59,9 @@ const subMenuIconHandler = computed(() => {
 
   > * {
     text-align: left;
-  }
-
-  a {
     font-family: var(--font-menu);
     font-size: var(--font-size-menu);
     text-transform: uppercase;
-    text-decoration: none;
-    color: var(--color-menu);
-    width: 100%;
-    text-align: center;
-    padding: 10px 10px;
-
-    &:hover {
-      cursor: pointer;
-      color: var(--secondary-color);
-    }
   }
 
   @include breakpoint(XXL) {

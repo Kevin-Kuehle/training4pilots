@@ -55,7 +55,9 @@ function handleScrolling(scroll) {
 
 <template>
   <Header />
-  <Icon color="blue" size="50" name="cross"></Icon>
+
+  <!-- TODO: later slot for content -->
+  <!-- TODO: need a footer -->
 </template>
 
 <style scoped lang="scss"></style>
