@@ -41,7 +41,9 @@ const subMenuButtonClasses = computed(() => {
 });
 
 function clickHandler($event) {
+  $event.stopPropagation();
   console.log(`devlog: click`, $event.target);
+  console.log(`devlog: isOpen`, isOpen.value);
 
   if (
     !ref.menuButton?.contains($event.target) ||
@@ -49,13 +51,12 @@ function clickHandler($event) {
   ) {
     isOpen.value = !isOpen.value;
   }
-  console.log(`devlog:event `, $event.target);
 }
 </script>
 <template>
   <div
     @mouseenter="isOpen = true"
-    @click="clickHandler"
+    @mouseleave="isOpen = false"
     class="c-sub-menu"
     :class="['c-sub-menu-lvl-' + lvl]"
   >
@@ -63,6 +64,7 @@ function clickHandler($event) {
       ref="menuButton"
       class="c-sub-menu__button"
       :class="subMenuButtonClasses"
+      @click.self="clickHandler"
     >
       <!-- pre-icon -->
       <div
@@ -103,6 +105,7 @@ function clickHandler($event) {
             :name="item.name"
             :subMenu="item.subMenu"
             :preIcon="item.preIcon"
+            :key="item.name"
             suffIcon="cross"
           ></SubMenu>
         </template>

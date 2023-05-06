@@ -102,11 +102,6 @@ const menu = ref([
 <style lang="scss" scoped>
 @import "@scss";
 
-svg {
-  height: 100%;
-  width: auto;
-}
-
 .c-header {
   width: 100%;
   display: grid;
