@@ -129,8 +129,13 @@ function clickHandler($event) {
   padding: var(--padding-menu-submenu);
 
   &-lvl {
-    &-1 {
+    &-1,
+    &-2,
+    &-3,
+    &-4 {
       text-align: left;
+      width: 100%;
+      padding: var(--padding-menu-item);
     }
   }
 
@@ -163,16 +168,15 @@ function clickHandler($event) {
       }
       // scss select all lvl in range from 1 to 20
       &--lvl-1 {
-        border: 5px solid red;
       }
 
       &--lvl-1 {
-        left: 100%;
+        left: calc(100% + 10px);
         top: -1px;
       }
 
       &--lvl-2 {
-        left: 100%;
+        left: calc(100% + 10px);
         top: 0;
       }
     }

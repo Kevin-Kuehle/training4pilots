@@ -32,10 +32,11 @@ const subMenuIconHandler = computed(() => {
           :lvl="0"
           :name="item.name"
           :subMenu="item.subMenu"
+          :key="item.name"
         ></SubMenu>
       </template>
       <template v-else>
-        <MenuItem :lvl="0" :item="item" />
+        <MenuItem :key="item" :lvl="0" :item="item" />
       </template>
     </template>
   </nav>
@@ -48,7 +49,7 @@ const subMenuIconHandler = computed(() => {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -70,7 +71,8 @@ const subMenuIconHandler = computed(() => {
     border: 1px solid red;
     width: auto;
     flex-direction: row;
-    gap: 10px;
+    align-items: center;
+    gap: 25px;
 
     a {
       width: auto;

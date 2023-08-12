@@ -18,12 +18,18 @@ const props = defineProps({
   >
 </template>
 <style lang="scss" scoped>
+@import "@scss";
+
 .c-menu-item {
   text-align: left;
   white-space: nowrap;
   flex: 1;
   text-align: center;
   padding: var(--padding-menu-item);
+
+  @include breakpoint(XXL) {
+    flex: 0 0 auto;
+  }
 
   &_lvl {
     &-1,

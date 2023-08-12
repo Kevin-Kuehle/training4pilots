@@ -1,6 +1,3 @@
-
-
-
 //fonts
 :root {
   --font-menu: "Francois One", sans-serif;
@@ -9,14 +6,14 @@
 
 // font sizes
 :root {
- --font-size-menu: 1.2rem;
- 
- @media (width > 1024px) {
-  --font-size-menu: 1rem;
- }
+  --font-size-menu: 1.2rem;
+
+  @media (width > 1024px) {
+    --font-size-menu: 1rem;
+  }
 }
 
-// icon sizes 
+// icon sizes
 :root {
   --icon-size-menu-arrow: 12px;
 }
@@ -53,7 +50,7 @@
 
 // widths
 :root {
- --width-mobile-button: 70px;
+  --width-mobile-button: 70px;
 }
 
 // breakpoints info: see scss function _breakpoint()
@@ -77,13 +74,11 @@
   }
 }
 
-
 // paddings
 :root {
   // menu rules
-  --padding-menu-item: 7px 0;
+  --padding-menu-item: 7px 12px;
   --padding-menu-submenu: 7px 0;
-
 }
 
 @media (prefers-color-scheme: dark) {
