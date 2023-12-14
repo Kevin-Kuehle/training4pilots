@@ -1,12 +1,18 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "vue-shims.d.ts"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"],
+      "@icons": ["src/components/icons"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@scss": ["src/assets/scss/style.scss"],
+      "@stores": ["src/stores"],
+      "@configs": ["src/assets/configs"]
     }
   }
 }

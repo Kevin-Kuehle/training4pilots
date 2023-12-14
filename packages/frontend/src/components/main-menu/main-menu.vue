@@ -1,5 +1,5 @@
-<script setup>
-import { toRefs, toRef, computed } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import { SubMenu, MenuItem } from "@components/main-menu";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
@@ -8,6 +8,15 @@ defineProps({
   items: {
     type: Array,
     required: true,
+  },
+  colors: {
+    type: Object,
+    required: false,
+    default: () => ({
+      normal: "var(--light-color-full)",
+      hover: "var(--light-color-full)",
+      active: "var(--light-color-full)",
+    }),
   },
 });
 
@@ -36,7 +45,7 @@ const subMenuIconHandler = computed(() => {
         ></SubMenu>
       </template>
       <template v-else>
-        <MenuItem :key="item" :lvl="0" :item="item" />
+        <MenuItem :colors="colors" :key="item" :lvl="0" :item="item" />
       </template>
     </template>
   </nav>

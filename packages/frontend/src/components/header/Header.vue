@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { MainMenu } from "@components/main-menu";
 import { ButtonMobileMenu } from "@components/buttons";
@@ -11,9 +11,15 @@ let eventWindowResize;
 
 let isOpen = ref(false);
 
-function mobileMenuStateChanged(state) {
+function mobileMenuStateChanged(state: boolean) {
   isOpen.value = state;
 }
+
+const menuColors = ref({
+  normal: "var(--light-color-full)",
+  hover: "var(--secondary-color)",
+  active: "var(--color-3)",
+});
 
 const menu = ref([
   { name: "Startseite", link: "/" },
@@ -89,7 +95,7 @@ const menu = ref([
         <Icon name="logo" size="auto" />
       </div>
       <div class="c-header__menu">
-        <MainMenu :items="menu" />
+        <MainMenu :colors="menuColors" :items="menu" />
       </div>
       <div class="c-header__action"></div>
       <div class="c-header__cart">
@@ -106,6 +112,7 @@ const menu = ref([
   width: 100%;
   display: grid;
   background-color: var(--primary-color);
+  color: white;
   grid-template-columns: 1fr var(--width-mobile-button);
   grid-template-rows: var(--height-mobile-header);
   grid-template-areas: "mobileLogo mobileButton" "mobile-menu-wrapper mobile-menu-wrapper";
@@ -114,28 +121,6 @@ const menu = ref([
   @include breakpoint(XXL) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-  }
-
-  &__mobile-logo {
-    grid-area: mobileLogo;
-    height: 100%;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 10px;
-    overflow: hidden;
-    background-color: var(--primary-color);
-  }
-
-  &__mobile-menu-button-wrapper {
-    grid-area: mobileButton;
-    z-index: 1000;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: var(--primary-color);
   }
 
   &__wrapper {
@@ -148,20 +133,12 @@ const menu = ref([
 
     position: absolute;
     left: 0;
-    // top: var(--height-mobile-header);
     top: var(--height-mobile-header);
     width: 100%;
     height: auto;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
-
-    background-color: rgb(255, 255, 255);
     opacity: 1;
     transition: 0.5s all ease-in-out;
-
-    &.open {
-      left: -100%;
-      opacity: 0;
-    }
 
     /* Desktop */
     @include breakpoint(XXL) {

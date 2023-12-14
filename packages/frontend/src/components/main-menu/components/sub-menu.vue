@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from "vue";
 import { SubMenu, MenuItem } from "@components/main-menu";
 import { IconCross, IconArrowDown, IconArrowRight } from "@icons";
@@ -28,7 +28,7 @@ const props = defineProps({
   },
 });
 
-const nextLevel = computed(() => ++props.lvl);
+const nextLevel = computed(() => (props.lvl ?? 0) + 1);
 const deviceStore = useDeviceStore();
 const isOpen = ref(false);
 

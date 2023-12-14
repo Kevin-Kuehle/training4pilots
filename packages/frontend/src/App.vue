@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { Header } from "@components";
 import { ref, onMounted, onUnmounted } from "vue";
 import { useDeviceStore } from "@stores";

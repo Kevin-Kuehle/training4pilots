@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import * as Icons from "@icons";
 
 const props = defineProps({
@@ -10,7 +10,7 @@ const props = defineProps({
     type: String,
   },
   size: {
-    type: String || Number,
+    type: Number,
   },
   lvl: {
     type: Number,

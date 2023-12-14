@@ -6,6 +6,8 @@ import router from "./router";
 
 import "./assets/scss/style.scss";
 
+import { useDeviceStore } from "@stores";
+
 const app = createApp(App);
 
 app.use(createPinia());
