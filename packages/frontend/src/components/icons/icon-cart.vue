@@ -1,11 +1,5 @@
 <template>
-  <svg
-    fill="#000000"
-    width="24px"
-    height="24px"
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg fill="#000000" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <title>ionicons-v5-d</title>
     <circle cx="176" cy="416" r="32" />
     <circle cx="400" cy="416" r="32" />

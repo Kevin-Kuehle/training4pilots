@@ -21,4 +21,9 @@ export default defineConfig({
   css: {
     devSourcemap: true,
   },
+  server: {
+    fs: {
+      strict: true,
+    },
+  },
 });

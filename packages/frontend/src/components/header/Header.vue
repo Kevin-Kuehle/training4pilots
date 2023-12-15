@@ -81,7 +81,7 @@ const menu = ref([
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-logo"
     >
-      <Icon name="logo" :size="200" />
+      <Icon name="logo" :size="300" />
     </div>
     <div
       v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
@@ -92,14 +92,14 @@ const menu = ref([
     <!-- menu window -->
     <div class="c-header__wrapper" :class="{ open: isOpen }">
       <div v-if="deviceStore.isDesktop" class="c-header__logo">
-        <Icon name="logo" size="auto" />
+        <Icon name="logo" :size="120" />
       </div>
       <div class="c-header__menu">
         <MainMenu :colors="menuColors" :items="menu" />
       </div>
       <div class="c-header__action"></div>
       <div class="c-header__cart">
-        warenkorb <Icon name="cart" size="auto" color="var(--color-1)" />
+        warenkorb <Icon name="cart" :size="200" color="var(--color-1)" />
       </div>
     </div>
   </header>

@@ -13,7 +13,7 @@ const props = defineProps({
   },
   colors: {
     type: Object,
-    required: true,
+    required: false,
   },
 });
 
