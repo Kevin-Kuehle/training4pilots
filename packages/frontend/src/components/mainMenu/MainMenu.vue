@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { SubMenu, MenuItem } from "@components/main-menu";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
+import { DesktopMenu, MobileMenu } from "@components";
+
+// fetch menuItems from backend or mock
+// check if mobile or desktop view
 
 defineProps({
-  items: {
-    type: Array,
-    required: true,
-  },
   colors: {
     type: Object,
     required: false,
@@ -33,20 +32,12 @@ const subMenuIconHandler = computed(() => {
 
 <template>
   <nav class="c-main-menu">
-    <template v-for="item in items">
-      <template v-if="item?.subMenu">
-        <SubMenu
-          :preIcon="item?.preIcon ? item?.preIcon : null"
-          :suffIcon="subMenuIconHandler"
-          :lvl="0"
-          :name="item.name"
-          :subMenu="item.subMenu"
-          :key="item.name"
-        ></SubMenu>
-      </template>
-      <template v-else>
-        <MenuItem :colors="colors" :key="item" :lvl="0" :item="item" />
-      </template>
+    <!-- Desktop or Mobilemenu -->
+    <template v-if="deviceStore.isDesktop">
+      <DesktopMenu />
+    </template>
+    <template v-else>
+      <MobileMenu />
     </template>
   </nav>
 </template>

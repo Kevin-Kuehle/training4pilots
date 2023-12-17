@@ -12,6 +12,6 @@ export const useDeviceStore = defineStore("device", {
     isMobile: (state) => state.breakpoint <= BREAKPOINTS.L,
     isTablet: (state) =>
       state.breakpoint > BREAKPOINTS.L && state.breakpoint <= BREAKPOINTS.XL,
-    isDesktop: (state) => state.breakpoint > BREAKPOINTS.XL,
+    isDesktop: (state) => state.breakpoint > BREAKPOINTS.XXL,
   },
 });

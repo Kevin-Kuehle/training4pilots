@@ -1,1 +1,1 @@
-export { useDeviceStore } from "./device";
+export { useDeviceStore } from "./deviceStore";

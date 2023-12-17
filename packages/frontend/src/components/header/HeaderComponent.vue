@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { MainMenu } from "@components/main-menu";
+import { MainMenu } from "@components";
 import { ButtonMobileMenu } from "@components/buttons";
 import { Icon } from "@components";
 import { useDeviceStore } from "@stores";

@@ -12,7 +12,8 @@
       "@components/*": ["src/components/*"],
       "@scss": ["src/assets/scss/style.scss"],
       "@stores": ["src/stores"],
-      "@configs": ["src/assets/configs"]
+      "@configs": ["src/assets/configs"],
+      "@mocks": ["tests/mocks"]
     }
   }
 }
