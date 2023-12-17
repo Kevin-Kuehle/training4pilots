@@ -7,7 +7,6 @@ import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
 
 const deviceStore = useDeviceStore();
-let eventWindowResize;
 
 let isOpen = ref(false);
 
@@ -78,13 +77,13 @@ const menu = ref([
 <template>
   <header class="c-header">
     <div
-      v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
+      v-if="deviceStore.breakpoint && deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-logo"
     >
       <Icon name="logo" :size="300" />
     </div>
     <div
-      v-if="deviceStore.breakpoint <= BREAKPOINTS.XXL"
+      v-if="deviceStore.breakpoint && deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-menu-button-wrapper"
     >
       <ButtonMobileMenu @change="mobileMenuStateChanged" />
