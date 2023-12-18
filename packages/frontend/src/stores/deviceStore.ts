@@ -1,4 +1,4 @@
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { defineStore } from "pinia";
 import { BREAKPOINTS } from "@configs";
 
@@ -9,9 +9,12 @@ export const useDeviceStore = defineStore("device", {
     scrollTop: ref(0),
   }),
   getters: {
-    isMobile: (state) => state.breakpoint <= BREAKPOINTS.L,
+    isMobile: (state) => state.breakpoint && state.breakpoint <= BREAKPOINTS.L,
     isTablet: (state) =>
-      state.breakpoint > BREAKPOINTS.L && state.breakpoint <= BREAKPOINTS.XL,
-    isDesktop: (state) => state.breakpoint > BREAKPOINTS.XXL,
+      state.breakpoint &&
+      state.breakpoint > BREAKPOINTS.L &&
+      state.breakpoint <= BREAKPOINTS.XL,
+    isDesktop: (state) =>
+      state.breakpoint && state.breakpoint > BREAKPOINTS.XXL,
   },
 });

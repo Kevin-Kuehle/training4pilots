@@ -13,7 +13,8 @@ export default defineConfig({
       "@scss": path.resolve(__dirname, "./src/assets/scss/style.scss"),
       "@stores": path.resolve(__dirname, "./src/stores"),
       "@configs": path.resolve(__dirname, "./src/assets/configs"),
-      "@mocks": path.resolve(__dirname, "./tests/mocks"),
+      "@mocks": path.resolve(__dirname, "./src/tests/mocks"),
+      "@types": path.resolve(__dirname, "./src/types"),
     },
   },
   build: {

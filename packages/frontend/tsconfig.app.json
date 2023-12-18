@@ -13,7 +13,8 @@
       "@scss": ["src/assets/scss/style.scss"],
       "@stores": ["src/stores"],
       "@configs": ["src/assets/configs"],
-      "@mocks": ["tests/mocks"]
+      "@mocks": ["src/tests/mocks"],
+      "@types": ["src/types"]
     }
   }
 }

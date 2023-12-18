@@ -1,0 +1,52 @@
+[
+  { "name": "Startseite", "path": "/" },
+  {
+    "name": "Sprechfunkzeugnisse",
+
+    "path": "/",
+    "subMenu": [
+      { "name": "BZF-I", "path": "/" },
+      {
+        "name": "BZF-II",
+        "path": "/",
+        "subMenu": [
+          {
+            "name": "BZF-I",
+            "path": "/",
+            "subMenu": [{ "name": "BZF-I", "path": "/" }]
+          },
+          { "name": "BZF-II", "path": "/" },
+          { "name": "AFZ", "path": "/" },
+          { "name": "Prüfungsablauf", "path": "/" },
+          { "name": "BZF-II", "path": "/" },
+          { "name": "AFZ", "path": "/" },
+          { "name": "Prüfungsablauf", "path": "/" }
+        ]
+      },
+      { "name": "AFZ", "path": "/" },
+      { "name": "Prüfungsablauf", "path": "/" },
+      { "name": "BZF-II", "path": "/" },
+      { "name": "AFZ", "path": "/" },
+      { "name": "Prüfungsablauf", "path": "/" }
+    ]
+  },
+  {
+    "name": "Kursangebote",
+    "path": "/",
+    "subMenu": [
+      {
+        "name": "BZF-I",
+        "path": "/",
+        "subMenu": [{ "name": "BZF-I", "path": "/" }]
+      },
+      { "name": "BZF-II", "path": "/" },
+      { "name": "AFZ", "path": "/" },
+      { "name": "Prüfungsablauf", "path": "/" },
+      { "name": "BZF-II", "path": "/" },
+      { "name": "AFZ", "path": "/" },
+      { "name": "Prüfungsablauf", "path": "/" }
+    ]
+  },
+  { "name": "Über Uns", "path": "/" },
+  { "name": "Kontakt", "path": "/" }
+]

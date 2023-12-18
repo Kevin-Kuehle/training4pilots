@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useDeviceStore } from "@stores";
+import { computed, ref } from "vue";
+import { useDeviceStore, useMockStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
 import { DesktopMenu, MobileMenu } from "@components";
-
+import { MenuItem } from "@/types";
 // fetch menuItems from backend or mock
 // check if mobile or desktop view
 
@@ -20,24 +20,22 @@ defineProps({
 });
 
 const deviceStore = useDeviceStore();
+const mockStore = useMockStore();
 
-const subMenuIconHandler = computed(() => {
-  if (deviceStore.breakpoint === BREAKPOINTS.XXXL) {
-    return "arrowDown";
-  } else {
-    return "cross";
-  }
-});
+// will be later a API call and triggered by other file.
+mockStore.fetchMenuItems();
+const menuItemsState: MenuItem[] | null = computed(
+  () => mockStore.$state.menuItems
+);
 </script>
 
 <template>
   <nav class="c-main-menu">
-    <!-- Desktop or Mobilemenu -->
     <template v-if="deviceStore.isDesktop">
-      <DesktopMenu />
+      <DesktopMenu :menuItems="menuItemsState" />
     </template>
     <template v-else>
-      <MobileMenu />
+      <MobileMenu :menuItems="menuItemsState" />
     </template>
   </nav>
 </template>
