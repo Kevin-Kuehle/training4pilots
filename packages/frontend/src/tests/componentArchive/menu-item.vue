@@ -16,15 +16,6 @@ const props = defineProps({
     required: false,
   },
 });
-
-// watch input and print it in console
-watch(
-  () => props.colors,
-  (newVal, oldVal) => {
-    console.log("newVal", newVal);
-    console.log("oldVal", oldVal);
-  }
-);
 </script>
 <template>
   <a
@@ -46,7 +37,6 @@ watch(
   flex: 1;
   text-align: center;
   padding: var(--padding-menu-item);
-  text-decoration: none;
 
   @include breakpoint(XXL) {
     flex: 0 0 auto;
@@ -58,23 +48,6 @@ watch(
     &-3 {
       text-align: left;
     }
-
-    :is(div) {
-      border: 1px solid rgb(108, 23, 187);
-      // padding: 0.8rem 1rem;
-    }
-
-    :is(a) {
-      // padding: 0.8rem 1rem;
-    }
-  }
-
-  :is(div) {
-    // padding: 0.8rem 1rem;
-  }
-
-  :is(a) {
-    // padding: 0.8rem 1rem;
   }
 }
 </style>

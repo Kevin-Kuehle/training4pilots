@@ -1,28 +1,27 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
-import type { MenuItem } from "@/types";
+import type { MenuItem as TMenuItem } from "@/types";
+import MenuItem from "./components/MenuItem.vue";
+import MenuNav from "./components/MenuNav.vue";
 
 defineProps({
   menuItems: {
-    type: Array as () => MenuItem[],
+    type: Array as () => TMenuItem[],
     required: true,
   },
 });
 </script>
 
 <template>
-  <ul class="c-desktop-menu">
-    <li
+  <MenuNav :depth="0">
+    <MenuItem
       v-for="(item, index) in menuItems"
-      :key="item.path"
-      class="c-desktop-menu-item"
-      :class="`c-desktop-menu-item-${index}`"
-    >
-      <router-link :to="item.path">
-        {{ item.name }}
-      </router-link>
-    </li>
-  </ul>
+      :item="item"
+      :index="index"
+      :key="item.path + index"
+      :depth="0"
+    />
+  </MenuNav>
 </template>
 
 <style lang="scss" scoped>

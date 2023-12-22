@@ -3,7 +3,7 @@ import { menuItems } from "@mocks";
 
 export const useMockStore = defineStore("mock", {
   state: () => ({
-    menuItems: null,
+    menuItems: [] as typeof menuItems, // Update the type of menuItems
   }),
   actions: {
     fetchMenuItems() {
@@ -11,7 +11,7 @@ export const useMockStore = defineStore("mock", {
         setTimeout(() => {
           this.menuItems = menuItems;
           resolve(this.menuItems);
-        }, 3000);
+        }, 10);
       });
     },
   },

@@ -19,59 +19,6 @@ const menuColors = ref({
   hover: "var(--secondary-color)",
   active: "var(--color-3)",
 });
-
-const menu = ref([
-  { name: "Startseite", link: "/" },
-  {
-    name: "Sprechfunkzeugnisse",
-
-    link: "/",
-    subMenu: [
-      { name: "BZF-I", link: "/" },
-      {
-        name: "BZF-II",
-        link: "/",
-        subMenu: [
-          {
-            name: "BZF-I",
-            link: "/",
-            subMenu: [{ name: "BZF-I", link: "/" }],
-          },
-          { name: "BZF-II", link: "/" },
-          { name: "AFZ", link: "/" },
-          { name: "Prüfungsablauf", link: "/" },
-          { name: "BZF-II", link: "/" },
-          { name: "AFZ", link: "/" },
-          { name: "Prüfungsablauf", link: "/" },
-        ],
-      },
-      { name: "AFZ", link: "/" },
-      { name: "Prüfungsablauf", link: "/" },
-      { name: "BZF-II", link: "/" },
-      { name: "AFZ", link: "/" },
-      { name: "Prüfungsablauf", link: "/" },
-    ],
-  },
-  {
-    name: "Kursangebote",
-    link: "/",
-    subMenu: [
-      {
-        name: "BZF-I",
-        link: "/",
-        subMenu: [{ name: "BZF-I", link: "/" }],
-      },
-      { name: "BZF-II", link: "/" },
-      { name: "AFZ", link: "/" },
-      { name: "Prüfungsablauf", link: "/" },
-      { name: "BZF-II", link: "/" },
-      { name: "AFZ", link: "/" },
-      { name: "Prüfungsablauf", link: "/" },
-    ],
-  },
-  { name: "Über Uns", link: "/" },
-  { name: "Kontakt", link: "/" },
-]);
 </script>
 
 <template>
@@ -94,7 +41,7 @@ const menu = ref([
         <Icon name="logo" :size="120" />
       </div>
       <div class="c-header__menu">
-        <MainMenu :colors="menuColors" :items="menu" />
+        <MainMenu :colors="menuColors" />
       </div>
       <div class="c-header__action"></div>
       <div class="c-header__cart">

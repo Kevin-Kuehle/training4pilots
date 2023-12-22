@@ -42,10 +42,6 @@ const subMenuButtonClasses = computed(() => {
 
 function clickHandler($event: MouseEvent) {
   $event.stopPropagation();
-  console.log(`devlog: click`, $event.target);
-  console.log(`devlog: isOpen`, isOpen.value);
-
-  console.log(`devlog: ref`, ref);
 
   if (
     !ref.menuButton.contains($event.target) ||
