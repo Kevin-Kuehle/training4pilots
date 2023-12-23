@@ -30,7 +30,7 @@ const isHovering = ref(false);
         : ''
     } ${
       item.subMenu
-        ? `c-desktop-menu-item-depth-${depth}--hovering-has-submenu`
+        ? `c-desktop-menu-item-has-submenu c-desktop-menu-item-depth-${depth}--hovering-has-submenu`
         : ''
     }`"
     @mouseenter="isHovering = true"
@@ -61,6 +61,7 @@ const isHovering = ref(false);
   height: auto;
   width: 100%;
   white-space: nowrap;
+  cursor: pointer;
 
   &-depth {
     position: relative;
@@ -106,13 +107,13 @@ const isHovering = ref(false);
           left: 0;
           width: calc(100% + 30px);
           height: 150%;
-          border: 1px solid red;
         }
       }
     }
 
     &-0 {
       padding: 0 0.2rem;
+      position: relative;
 
       > a {
         color: var(--light-color-full);
