@@ -117,6 +117,10 @@ const isHovering = ref(false);
         > ul {
           animation: left-right 0.2s ease-in-out;
         }
+
+        > a {
+          color: var(--color-1);
+        }
       }
 
       &-has-submenu {
@@ -137,6 +141,12 @@ const isHovering = ref(false);
 
       > a {
         color: var(--light-color-full);
+      }
+
+      &--hovering {
+        > a {
+          color: var(--secondary-color);
+        }
       }
 
       &-has-submenu {
