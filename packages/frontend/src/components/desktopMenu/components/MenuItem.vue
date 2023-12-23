@@ -30,9 +30,16 @@ const isHovering = ref(false);
         : ''
     } ${
       item.subMenu
-        ? `c-desktop-menu-item-has-submenu c-desktop-menu-item-depth-${depth}--hovering-has-submenu`
+        ? `c-desktop-menu-item-has-submenu c-desktop-menu-item-depth-${depth}-has-submenu--hovering`
         : ''
-    }`"
+    }
+    ${
+      isHovering && item.subMenu
+        ? `c-desktop-menu-item-depth-${depth}-has-submenu--hovering- c-desktop-menu-item-has-submenu--hovering`
+        : ''
+    }
+    
+    `"
     @mouseenter="isHovering = true"
     @mouseleave="isHovering = false"
   >
@@ -62,6 +69,13 @@ const isHovering = ref(false);
   width: 100%;
   white-space: nowrap;
   cursor: pointer;
+
+  &--hovering {
+    > ul {
+      display: flex;
+      animation: top-down 0.2s ease-in-out;
+    }
+  }
 
   &-depth {
     position: relative;
@@ -99,14 +113,20 @@ const isHovering = ref(false);
 
       &--hovering {
         width: 100%;
+
+        > ul {
+          animation: left-right 0.2s ease-in-out;
+        }
       }
 
-      &--hovering-has-submenu {
-        &::before {
-          top: 0;
-          left: 0;
-          width: calc(100% + 30px);
-          height: 150%;
+      &-has-submenu {
+        &--hovering {
+          &::before {
+            top: 0;
+            left: 0;
+            width: calc(100% + 30px);
+            height: 150%;
+          }
         }
       }
     }
@@ -119,20 +139,16 @@ const isHovering = ref(false);
         color: var(--light-color-full);
       }
 
-      &--hovering-has-submenu {
-        &::before {
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: calc(100% + 20px);
+      &-has-submenu {
+        &--hovering {
+          &::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% + 20px);
+          }
         }
       }
-    }
-  }
-
-  &--hovering {
-    > ul {
-      display: flex;
     }
   }
 }
