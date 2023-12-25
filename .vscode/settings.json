@@ -1,25 +1,29 @@
 {
- "favorites.resources": [
-  {
-   "filePath": "packages\\frontend\\src\\App.vue",
-   "group": "Default"
-  },
-  {
-   "filePath": "packages\\frontend\\src\\components\\header\\Header.vue",
-   "group": "Default"
-  },
-  {
-   "filePath": "packages\\frontend\\src\\components\\main-menu\\main-menu.vue",
-   "group": "Default"
-  },
-  {
-   "filePath": "packages\\frontend\\src\\components\\main-menu\\components\\sub-menu.vue",
-   "group": "Default"
-  },
-  {
-   "filePath": "packages\\frontend\\src\\components\\main-menu\\components\\menu-item.vue",
-   "group": "Default"
-  }
- ],
- "favorites.sortOrder": "MANUAL"
+    "favorites.resources": [
+        {
+            "filePath": "packages\\frontend\\src\\components\\header\\Header.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\main-menu\\main-menu.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\main-menu\\components\\sub-menu.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\main-menu\\components\\menu-item.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\buttons\\button-mobile-menu.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\header\\HeaderComponent.vue",
+            "group": "Default"
+        }
+    ],
+    "favorites.sortOrder": "MANUAL"
 }

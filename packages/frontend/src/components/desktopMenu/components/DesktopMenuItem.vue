@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import type { MenuItem } from "@/types";
-import MenuNav from "./MenuNav.vue";
+import DesktopMenuList from "./DesktopMenuList.vue";
 
 defineProps({
   item: {
@@ -46,15 +46,15 @@ const isHovering = ref(false);
     <router-link :to="item.path">
       {{ item.name }}
     </router-link>
-    <MenuNav v-if="item.subMenu" :depth="depth + 1">
-      <MenuItem
+    <DesktopMenuList v-if="item.subMenu" :depth="depth + 1">
+      <DesktopMenuItem
         v-for="(subItem, index) in item.subMenu"
         :item="subItem"
         :index="index"
         :key="subItem.path + index"
         :depth="depth + 1"
       />
-    </MenuNav>
+    </DesktopMenuList>
   </li>
 </template>
 

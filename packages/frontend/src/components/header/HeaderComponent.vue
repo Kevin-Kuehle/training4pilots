@@ -27,7 +27,7 @@ const menuColors = ref({
       v-if="deviceStore.breakpoint && deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-logo"
     >
-      <Icon name="logo" :size="300" />
+      <Icon name="logo" :width="80" />
     </div>
     <div
       v-if="deviceStore.breakpoint && deviceStore.breakpoint <= BREAKPOINTS.XXL"
@@ -38,14 +38,14 @@ const menuColors = ref({
     <!-- menu window -->
     <div class="c-header__wrapper" :class="{ open: isOpen }">
       <div v-if="deviceStore.isDesktop" class="c-header__logo">
-        <Icon name="logo" :size="120" />
+        <Icon name="logo" :width="190" />
       </div>
       <div class="c-header__menu">
         <MainMenu :colors="menuColors" />
       </div>
       <div class="c-header__action"></div>
       <div class="c-header__cart">
-        warenkorb <Icon name="cart" :size="200" color="var(--color-1)" />
+        warenkorb <Icon name="cart" :width="200" color="var(--color-1)" />
       </div>
     </div>
   </header>
@@ -75,7 +75,7 @@ const menuColors = ref({
     grid-auto-rows: auto;
     grid-template-columns: 100%;
     grid-area: mobile-menu-wrapper;
-    grid-template-areas: "menu" "cart" "action";
+    grid-template-areas: "logo" "menu" "cart" "action";
 
     position: absolute;
     left: 0;
@@ -88,6 +88,7 @@ const menuColors = ref({
 
     /* Desktop */
     @include breakpoint(XXL) {
+      border: 1px blue dotted;
       box-shadow: initial;
       position: initial;
       top: initial;
@@ -96,6 +97,16 @@ const menuColors = ref({
       grid-template-areas: "logo menu cart action";
       grid-template-columns: 300px 1fr 100px 100px;
       overflow: visible;
+    }
+  }
+
+  &__mobile-logo {
+    display: flex;
+    padding-inline: 1rem;
+    svg {
+      flex: 0 0 200px;
+      max-height: 100%;
+      justify-self: center;
     }
   }
 

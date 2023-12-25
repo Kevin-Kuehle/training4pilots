@@ -54,7 +54,7 @@ const changeState = () => {
 }
 
 .button-mobile-menu[aria-expanded="true"] .hamburger {
-  translate: 10px -10px;
+  translate: 10px -6px;
   rotate: 0.125turn;
 }
 

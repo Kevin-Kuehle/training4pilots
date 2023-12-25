@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import type { MenuItem } from "@/types";
 
 defineProps({

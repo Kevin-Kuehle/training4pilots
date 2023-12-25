@@ -69,7 +69,7 @@ function clickHandler($event: MouseEvent) {
         class="c-sub-menu__button__icon c-sub-menu__button__icon__pre"
         v-if="preIcon"
       >
-        <Icon :name="preIcon" :size="120" color="black" />
+        <Icon :name="preIcon" :width="120" color="black" />
       </div>
       <!-- name -->
       <div
@@ -85,7 +85,7 @@ function clickHandler($event: MouseEvent) {
         class="c-sub-menu__button__icon c-sub-menu__button__icon__suff"
         :class="{ 'c-sub-menu__button__icon--open': isOpen }"
       >
-        <Icon :name="suffIcon" :size="120" color="black" />
+        <Icon :name="suffIcon" :width="120" color="black" />
       </div>
     </button>
     <div

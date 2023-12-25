@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import type { MenuItem as TMenuItem } from "@/types";
-import MenuItem from "./components/MenuItem.vue";
-import MenuNav from "./components/MenuNav.vue";
+import DesktopMenuList from "./components/DesktopMenuList.vue";
+import DesktopMenuItem from "./components/DesktopMenuItem.vue";
 
 defineProps({
   menuItems: {
@@ -13,15 +12,15 @@ defineProps({
 </script>
 
 <template>
-  <MenuNav :depth="0">
-    <MenuItem
+  <DesktopMenuList :depth="0">
+    <DesktopMenuItem
       v-for="(item, index) in menuItems"
       :item="item"
       :index="index"
       :key="item.path + index"
       :depth="0"
     />
-  </MenuNav>
+  </DesktopMenuList>
 </template>
 
 <style lang="scss" scoped>

@@ -11,7 +11,10 @@ const props = defineProps({
   color: {
     type: String,
   },
-  size: {
+  height: {
+    type: Number,
+  },
+  width: {
     type: Number,
   },
   lvl: {
@@ -44,8 +47,8 @@ function getComponentName(): object | null {
 <template>
   <component
     :is="getComponentName()"
-    :height="size"
-    :width="size"
+    :height="height"
+    :width="width"
     :color="color"
     :fill="color"
   ></component>

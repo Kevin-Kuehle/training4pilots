@@ -66,7 +66,6 @@ const menuItemsState: MenuItem[] | null = computed(
   @include breakpoint(XXL) {
     margin: 0;
     padding: 0;
-    border: 1px solid red;
     width: auto;
     flex-direction: row;
     align-items: center;
