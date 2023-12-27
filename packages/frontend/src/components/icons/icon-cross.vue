@@ -11,7 +11,12 @@
     />
     <path
       d="m16 8-8 8m4-4 4 4M8 8l2 2"
-      style="fill: none; fill-rule: nonzero; stroke: #000; stroke-width: 1.5px"
+      style="
+        fill: none;
+        fill-rule: nonzero;
+        stroke: currentColor;
+        stroke-width: 1.5px;
+      "
       transform="matrix(1 0 0 1 -6.993 -6.993)"
     />
   </svg>

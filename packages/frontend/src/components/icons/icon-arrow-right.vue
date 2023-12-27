@@ -1,16 +1,8 @@
 <template>
-  <svg
-    class="arrow-right"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 400 400"
-    background="red"
-    stroke="currentColor"
-  >
+  <svg viewBox="-4.5 0 20 20" xmlns="http://www.w3.org/2000/svg">
     <path
-      d="M91.708 1033.49 272.97 851.435 92.69 671.28l17.672-17.683 197.93 197.794-198.867 199.739-17.717-17.639Z"
-      font-family="sans-serif"
-      font-weight="400"
-      stroke="currentColor"
+      d="M1.39 0 0 1.406l8.261 8.607-.881.918.005-.005-7.34 7.647L1.414 20 11 10.013 1.39 0"
+      fill="currentColor"
     />
   </svg>
 </template>

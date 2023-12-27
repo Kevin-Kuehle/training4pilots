@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import type { MenuItem } from "@/types";
 import MobileMenuList from "./MobileMenuList.vue";
+import { Icon } from "@components";
 
 defineProps({
   item: {
@@ -50,9 +51,12 @@ const stateHandler = (el: HTMLElement) => {
     @click.stop="stateHandler($event.currentTarget as HTMLElement)"
   >
     <router-link :to="item.path">
+      <span v-if="item.subMenu" class="c-mobile-menu-item-pre-icon">
+        <Icon name="ArrowRight" :height="12" color="var(--light-color-full)" />
+      </span>
       {{ item.name }}
     </router-link>
-    <MobileMenuList v-if="item.subMenu" :depth="depth + 1">
+    <MobileMenuList v-if="item?.subMenu" :depth="depth + 1">
       <MobileMenuItem
         v-for="(subItem, index) in item.subMenu"
         :item="subItem"
@@ -66,14 +70,38 @@ const stateHandler = (el: HTMLElement) => {
 
 <style lang="scss" scoped>
 .c-mobile-menu-item {
+  padding-block: 0.3rem;
+
   > a {
     text-decoration: none;
     color: var(--color-text);
+    display: flex;
+    flex-flow: row nowrap;
   }
 
   &.open {
     > ul {
-      display: flex;
+      display: grid;
+      height: auto;
+      opacity: 1;
+    }
+
+    > a {
+      color: var(--secondary-color);
+    }
+  }
+
+  &-pre-icon {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    transition: transform 200ms ease-in-out;
+
+    // parent has class open
+    .c-mobile-menu-item.open > a > & {
+      transform: rotate(90deg);
     }
   }
 }
