@@ -15,6 +15,7 @@ export default defineConfig({
       "@configs": path.resolve(__dirname, "./src/assets/configs"),
       "@mocks": path.resolve(__dirname, "./src/tests/mocks"),
       "@types": path.resolve(__dirname, "./src/types"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
   build: {

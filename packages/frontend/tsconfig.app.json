@@ -14,7 +14,8 @@
       "@stores": ["src/stores"],
       "@configs": ["src/assets/configs"],
       "@mocks": ["src/tests/mocks"],
-      "@types": ["src/types"]
+      "@types": ["src/types"],
+      "@utils": ["src/utils"]
     }
   }
 }

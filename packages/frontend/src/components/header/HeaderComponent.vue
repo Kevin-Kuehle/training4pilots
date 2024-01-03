@@ -43,7 +43,7 @@ const menuColors = ref({
       <div class="c-header__menu">
         <MainMenu :colors="menuColors" />
       </div>
-      <div class="c-header__action"></div>
+      <div v-if="false" class="c-header__action"></div>
       <div class="c-header__cart">
         warenkorb <Icon name="cart" :width="200" color="var(--color-1)" />
       </div>
@@ -78,13 +78,17 @@ const menuColors = ref({
     grid-template-areas: "logo" "menu" "cart" "action";
 
     position: absolute;
-    left: 0;
+    left: -100%;
     top: var(--height-mobile-header);
     width: 100%;
     height: auto;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 1;
     transition: 0.5s all ease-in-out;
+
+    &.open {
+      left: 0;
+    }
 
     /* Desktop */
     @include breakpoint(XXL) {

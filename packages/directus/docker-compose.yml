@@ -1,18 +1,23 @@
-version: "3"
+version: '3'
 services:
-  directus:
-    image: directus/directus:10.8.2
-    ports:
-      - 8055:8055
-    volumes:
-      - ./database:/directus/database
-      - ./uploads:/directus/uploads
-      - ./extensions:/directus/extensions
-    environment:
-      KEY: "iuzr834rzt8473ztrr34gr43z(/T/B§§)"
-      SECRET: "hg8u34z43zb3478!/(/82tr43968rtr348t4783)"
-      ADMIN_EMAIL: "kevin.kuehle@gmail.com"
-      ADMIN_PASSWORD: "passwort"
-      DB_CLIENT: "sqlite3"
-      DB_FILENAME: "/directus/database/data.db"
-      WEBSOCKETS_ENABLED: true
+    directus:
+        image: directus/directus:latest
+        ports:
+            - 8055:8055
+        volumes:
+            - ./database:/directus/database
+            - ./uploads:/directus/uploads
+            - ./extensions:/directus/extensions
+        environment:
+            KEY: 'iuzr834rzt8473ztrr34gr43z(/T/B§§)'
+            SECRET: 'hg8u34z43zb3478!/(/82tr43968rtr348t4783)'
+            ADMIN_EMAIL: 'kevin.kuehle@gmail.com'
+            ADMIN_PASSWORD: 'passwort'
+            DB_CLIENT: 'sqlite3'
+            DB_FILENAME: '/directus/database/data.db'
+            WEBSOCKETS_ENABLED: true
+            CORS_ENABLED: true
+            CORS_ORIGINS: '*'
+            CORS_METHODS: 'GET,POST,PATCH,DELETE'
+            CORS_ALLOWED_HEADERS: 'Content-Type,Authorization'
+            CORS_EXPOSED_HEADERS: 'Content-Range'

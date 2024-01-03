@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { useDeviceStore, useMockStore } from "@stores";
-import { BREAKPOINTS } from "@configs";
+import type { MenuItem } from "@types";
 import { DesktopMenu, MobileMenu } from "@components";
-import { MenuItem } from "@/types";
-// fetch menuItems from backend or mock
-// check if mobile or desktop view
+import { BREAKPOINTS } from "@configs";
 
 defineProps({
   colors: {

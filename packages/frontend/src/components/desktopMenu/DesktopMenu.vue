@@ -27,7 +27,7 @@ defineProps({
 .c-desktop-menu {
   display: flex;
   flex-flow: row nowrap;
-  gap: 0 25px;
+  gap: 0 20px;
 }
 
 ul {

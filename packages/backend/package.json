@@ -1,9 +1,0 @@
-{
-    "name": "@t4p-project/backend",
-    "version": "0.0.0",
-    "main": "index.js",
-    "keywords": [],
-    "author": "Kevin Kühle",
-    "license": "ISC",
-    "private": true
-}
