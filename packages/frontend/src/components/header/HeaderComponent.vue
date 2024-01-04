@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { MainMenu } from "@components";
-import { ButtonMobileMenu } from "@components/buttons";
+import { MainMenu, Button, ButtonMobileBurger } from "@components";
 import { Icon } from "@components";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
@@ -33,7 +32,7 @@ const menuColors = ref({
       v-if="deviceStore.breakpoint && deviceStore.breakpoint <= BREAKPOINTS.XXL"
       class="c-header__mobile-menu-button-wrapper"
     >
-      <ButtonMobileMenu @change="mobileMenuStateChanged" />
+      <ButtonMobileBurger @change="mobileMenuStateChanged" />
     </div>
     <!-- menu window -->
     <div class="c-header__wrapper" :class="{ open: isOpen }">
@@ -43,7 +42,9 @@ const menuColors = ref({
       <div class="c-header__menu">
         <MainMenu :colors="menuColors" />
       </div>
-      <div v-if="false" class="c-header__action"></div>
+      <div class="c-header__action">
+        <Button text="Anmelden" />
+      </div>
       <div class="c-header__cart">
         warenkorb <Icon name="cart" :width="200" color="var(--color-1)" />
       </div>
@@ -57,12 +58,13 @@ const menuColors = ref({
 .c-header {
   width: 100%;
   display: grid;
-  background-color: var(--primary-color);
+  background-color: var(--color-header);
   color: white;
   grid-template-columns: 1fr var(--width-mobile-button);
   grid-template-rows: var(--height-mobile-header);
   grid-template-areas: "mobileLogo mobileButton" "mobile-menu-wrapper mobile-menu-wrapper";
   transform: all 0.2 linear;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 
   @include breakpoint(XXL) {
     grid-template-columns: 1fr;
@@ -71,7 +73,7 @@ const menuColors = ref({
 
   &__wrapper {
     overflow: hidden;
-    display: grid;
+    display: inline-grid;
     grid-auto-rows: auto;
     grid-template-columns: 100%;
     grid-area: mobile-menu-wrapper;
@@ -92,14 +94,12 @@ const menuColors = ref({
 
     /* Desktop */
     @include breakpoint(XXL) {
-      border: 1px blue dotted;
       box-shadow: initial;
       position: initial;
       top: initial;
       grid-template-columns: 250px 1fr auto auto;
       grid-template-rows: auto;
       grid-template-areas: "logo menu cart action";
-      grid-template-columns: 300px 1fr 100px 100px;
       overflow: visible;
     }
   }
@@ -136,11 +136,11 @@ const menuColors = ref({
 
   &__action {
     grid-area: action;
-    padding: 30px 0;
     display: flex;
     flex-flow: row;
     justify-content: center;
     color: white;
+    padding-inline: 20px;
   }
 
   &__cart {

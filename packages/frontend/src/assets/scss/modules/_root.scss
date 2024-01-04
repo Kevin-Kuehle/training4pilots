@@ -2,6 +2,7 @@
 :root {
   --font-menu: "Francois One", sans-serif;
   --font-main: "Inter", sans-serif;
+  --font-button: var(--font-menu);
 }
 
 // font sizes
@@ -26,6 +27,11 @@
   --dark-color-full: #1a1a1a;
   --color-1: #236bbd;
   --color-menu: #12171c;
+}
+
+// header color
+:root {
+  --color-header: hsla(212, 23%, 14%, 0.95);
 }
 
 // gaps
