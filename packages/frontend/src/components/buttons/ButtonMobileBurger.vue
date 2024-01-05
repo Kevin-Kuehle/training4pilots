@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const emit = defineEmits(["change"]);
+
+const isActive = ref(false);
+
+const changeState = () => {
+  isActive.value = !isActive.value;
+  emit("change", isActive.value);
+};
+</script>
+
 <template>
   <button
     class="button-mobile-menu"
@@ -22,19 +35,6 @@
     </svg>
   </button>
 </template>
-
-<script setup>
-import { ref, watchEffect } from "vue";
-
-const emit = defineEmits(["change"]);
-
-const isActive = ref(false);
-
-const changeState = () => {
-  isActive.value = !isActive.value;
-  emit("change", isActive.value);
-};
-</script>
 
 <style lang="scss" scoped>
 .button-mobile-menu {

@@ -8,11 +8,17 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  id: {
+    type: String,
+    default: "",
+  },
 });
+
+const emit = defineEmits(["onClick"]);
 </script>
 
 <template>
-  <button class="c-button" :disabled="disabled">
+  <button @click="emit('onClick', id)" class="c-button" :disabled="disabled">
     {{ text }}
   </button>
 </template>

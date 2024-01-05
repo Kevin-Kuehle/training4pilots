@@ -18,6 +18,10 @@ const menuColors = ref({
   hover: "var(--secondary-color)",
   active: "var(--color-3)",
 });
+
+const handleClick = (id: string) => {
+  console.log(id);
+};
 </script>
 
 <template>
@@ -43,7 +47,7 @@ const menuColors = ref({
         <MainMenu :colors="menuColors" />
       </div>
       <div class="c-header__action">
-        <Button text="Anmelden" />
+        <Button text="Anmelden" id="login" @onClick="handleClick" />
       </div>
       <div class="c-header__cart">
         warenkorb <Icon name="cart" :width="200" color="var(--color-1)" />
