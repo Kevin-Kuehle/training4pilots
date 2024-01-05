@@ -56,6 +56,7 @@ function handleScrolling(scroll) {
 <template>
   <Header />
   <!-- TODO: later slot for content -->
+
   <!-- TODO: need a footer -->
 </template>
 
