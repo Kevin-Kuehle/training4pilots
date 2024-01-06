@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { MainMenu, Button, ButtonMobileBurger } from "@components";
-import { Icon } from "@components";
+import { Icon, Cart } from "@components";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
 
@@ -49,9 +49,7 @@ const handleClick = (id: string) => {
       <div class="c-header__action">
         <Button text="Anmelden" id="login" @onClick="handleClick" />
       </div>
-      <div class="c-header__cart">
-        warenkorb <Icon name="cart" :width="200" color="var(--color-1)" />
-      </div>
+      <div class="c-header__cart"><Cart /></div>
     </div>
   </header>
 </template>
@@ -69,6 +67,7 @@ const handleClick = (id: string) => {
   grid-template-areas: "mobileLogo mobileButton" "mobile-menu-wrapper mobile-menu-wrapper";
   transform: all 0.2 linear;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-block: 0.5rem;
 
   @include breakpoint(XXL) {
     grid-template-columns: 1fr;
@@ -79,18 +78,21 @@ const handleClick = (id: string) => {
     overflow: hidden;
     display: inline-grid;
     grid-auto-rows: auto;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-area: mobile-menu-wrapper;
-    grid-template-areas: "logo" "menu" "cart" "action";
-
+    grid-template-areas: ". menu menu" ". action cart";
     position: absolute;
     left: -100%;
-    top: var(--height-mobile-header);
+    top: calc(var(--height-mobile-header) + 1rem);
     width: 100%;
     height: auto;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 1;
     transition: 0.5s all ease-in-out;
+
+    @include breakpoint(XL) {
+      grid-template-areas: ". menu ." ". action . " ". cart .";
+    }
 
     &.open {
       left: 0;
@@ -103,7 +105,7 @@ const handleClick = (id: string) => {
       top: initial;
       grid-template-columns: 250px 1fr auto auto;
       grid-template-rows: auto;
-      grid-template-areas: "logo menu cart action";
+      grid-template-areas: "logo menu action cart";
       overflow: visible;
     }
   }
@@ -131,7 +133,6 @@ const handleClick = (id: string) => {
   }
   &__menu {
     grid-area: menu;
-    padding: 30px 30px;
 
     @include breakpoint(XXL) {
       padding: 0;
@@ -142,22 +143,29 @@ const handleClick = (id: string) => {
     grid-area: action;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-start;
     color: white;
-    padding-inline: 20px;
+
+    @include breakpoint(XXL) {
+      padding-left: 1rem;
+    }
   }
 
   &__cart {
     grid-area: cart;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 0;
+    padding-right: 20px;
 
     svg {
       max-height: 24px;
       width: auto;
+    }
+
+    @include breakpoint(XXL) {
+      padding-left: 1rem;
     }
   }
 }

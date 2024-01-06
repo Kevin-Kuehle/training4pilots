@@ -5,3 +5,4 @@ export { default as MobileMenu } from "./mobileMenu/MobileMenu.vue";
 export { default as DesktopMenu } from "./desktopMenu/DesktopMenu.vue";
 export { default as Button } from "./buttons/ButtonComponent.vue";
 export { default as ButtonMobileBurger } from "./buttons/ButtonMobileBurger.vue";
+export { default as Cart } from "./cart/cartComponent.vue";
