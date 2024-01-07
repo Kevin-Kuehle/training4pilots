@@ -48,6 +48,8 @@ defineProps({
       backdrop-filter: blur(10px);
       padding: 8px 20px 8px 11px;
       border-radius: 0px 30px 0px 20px;
+      border-top: 1px solid var(--secondary-color);
+      border-bottom: 1px solid var(--secondary-color);
     }
     left: calc(100% + 30px);
 

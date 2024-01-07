@@ -3,7 +3,7 @@ import { Header } from "@components";
 import { ref, onMounted, onUnmounted } from "vue";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
-import { Icon } from "@components";
+import { ContentLayouter } from "@components";
 
 const deviceStore = useDeviceStore();
 
@@ -55,23 +55,9 @@ function handleScrolling(scroll) {
 
 <template>
   <Header />
-  <!-- TODO: later slot for content -->
-
-  <q-dialog v-model="confirm" persistent>
-    <q-card>
-      <q-card-section class="row items-center">
-        <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
-        <span class="q-ml-sm"
-          >You are currently not connected to any network.</span
-        >
-      </q-card-section>
-      <q-card-actions align="right">
-        <q-btn flat label="Cancel" color="primary" v-close-popup />
-        <q-btn flat label="Turn on Wifi" color="primary" v-close-popup />
-      </q-card-actions>
-    </q-card>
-  </q-dialog>
-  <!-- TODO: need a footer -->
+  <ContentLayouter>
+    <RouterView />
+  </ContentLayouter>
 </template>
 
 <style scoped lang="scss"></style>

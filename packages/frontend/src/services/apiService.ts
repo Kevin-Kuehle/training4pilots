@@ -11,6 +11,7 @@ const REST_URL = "http://localhost:8055";
 const MENU_WHITE_LIST = ["mainMenu"];
 
 export const initMenusService = async () => {
+  return;
   const response = await axios.post(
     GRAPHQL_URL,
     {
