@@ -29,6 +29,7 @@ ul.c-mobile-menu-list {
   grid-row: 1/2;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+
   &-depth {
     &-0 {
       display: grid;

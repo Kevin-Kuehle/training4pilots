@@ -21,12 +21,16 @@
 
 // colors
 :root {
-  --primary-color: hsla(212, 23%, 14%, 1);
+  --primary-color: hsl(212, 23%, 14%);
   --secondary-color: #ede1cd;
   --light-color-full: #fff;
   --dark-color-full: #1a1a1a;
   --color-1: #236bbd;
   --color-menu: #12171c;
+}
+
+:root {
+  --primary-color-lighter: var(--color-menu);
 }
 
 // header color

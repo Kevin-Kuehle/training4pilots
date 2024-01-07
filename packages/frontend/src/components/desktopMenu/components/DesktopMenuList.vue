@@ -44,7 +44,7 @@ defineProps({
     &-5 {
       justify-content: flex-start;
       align-items: flex-start;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: var(--primary-color);
       backdrop-filter: blur(10px);
       padding: 8px 20px 8px 11px;
       border-radius: 0px 30px 0px 20px;

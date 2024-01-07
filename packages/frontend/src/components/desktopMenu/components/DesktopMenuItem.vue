@@ -108,7 +108,7 @@ const isHovering = ref(false);
     &-4,
     &-5 {
       a {
-        color: var(--color-menu);
+        color: var(--light-color-full);
       }
 
       &--hovering {
@@ -119,7 +119,7 @@ const isHovering = ref(false);
         }
 
         > a {
-          color: var(--color-1);
+          color: var(--secondary-color);
         }
       }
 

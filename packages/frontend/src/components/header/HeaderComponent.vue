@@ -48,8 +48,8 @@ const handleClick = (id: string) => {
       </div>
       <div class="c-header__action">
         <Button text="Anmelden" id="login" @onClick="handleClick" />
+        <div class="c-header__cart"><Cart /></div>
       </div>
-      <div class="c-header__cart"><Cart /></div>
     </div>
   </header>
 </template>
@@ -89,8 +89,14 @@ const handleClick = (id: string) => {
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 1;
     transition: 0.5s all ease-in-out;
+    padding-top: 2rem;
 
-    @include breakpoint(XL) {
+    background-color: var(--primary-color-lighter);
+
+    @include breakpoint(XXL) {
+      background-color: inherit;
+      padding-top: initial;
+      padding-block: initial;
       grid-template-areas: ". menu ." ". action . " ". cart .";
     }
 
@@ -145,9 +151,11 @@ const handleClick = (id: string) => {
     flex-flow: row;
     justify-content: flex-start;
     color: white;
+    padding-block: 1rem;
 
     @include breakpoint(XXL) {
-      padding-left: 1rem;
+      padding-block: initial;
+      padding-inline: 1rem;
     }
   }
 
@@ -157,7 +165,6 @@ const handleClick = (id: string) => {
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
-    padding-right: 20px;
 
     svg {
       max-height: 24px;
