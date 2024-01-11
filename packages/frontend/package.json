@@ -22,8 +22,6 @@
     "dotenv": "^16.3.1",
     "graphql-tag": "^2.12.6",
     "pinia": "^2.1.7",
-    "primeicons": "^6.0.1",
-    "primevue": "^3.43.0",
     "quasar": "^2.14.2",
     "vue": "^3.2.45",
     "vue-router": "^4.2.5"

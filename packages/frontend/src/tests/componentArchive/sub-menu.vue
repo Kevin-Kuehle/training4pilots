@@ -198,7 +198,6 @@ function clickHandler($event: MouseEvent) {
     font-family: var(--font-menu);
     text-transform: uppercase;
     font-size: var(--font-size-menu);
-    color: var(--color-menu);
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     align-items: center;

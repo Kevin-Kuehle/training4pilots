@@ -18,3 +18,10 @@ $breakpoints: (
     @content;
   }
 }
+
+// create desctop first breakpoint mixin with variable body
+@mixin breakpoint-desktop-first($breakpoint) {
+  @media screen and (width < _breakpoint($breakpoint)) {
+    @content;
+  }
+}

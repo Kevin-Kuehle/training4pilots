@@ -8,8 +8,8 @@
     "path": "/",
     "subMenu": [
       {
-        "name": "BZF-I",
-        "path": "/",
+        "name": "BZF-I test",
+        "path": "/bzf-i",
         "subMenu": [
           {
             "name": "BZF-I",

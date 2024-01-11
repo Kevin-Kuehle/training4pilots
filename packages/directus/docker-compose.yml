@@ -21,3 +21,12 @@ services:
             CORS_METHODS: 'GET,POST,PATCH,DELETE'
             CORS_ALLOWED_HEADERS: 'Content-Type,Authorization'
             CORS_EXPOSED_HEADERS: 'Content-Range'
+            EMAIL_TRANSPORT: 'SMTP'
+            EMAIL_SMTP_HOST: 'smtp.gmail.com'
+            EMAIL_SMTP_PORT: 587
+            EMAIL_SMTP_USER: 'cpt.kaeffchen@gmail.com'
+            EMAIL_SMTP_PASSWORD: 'Ichbinderboss1337kuehlemail'
+            EMAIL_SMTP_POOL: true
+            EMAIL_SMTP_SECURE: false
+            EMAIL_SMTP_TLS: false
+            EMAIL_SMTP_NAME: 'directus'

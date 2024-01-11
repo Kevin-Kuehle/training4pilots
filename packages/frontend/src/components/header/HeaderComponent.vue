@@ -68,6 +68,8 @@ const handleClick = (id: string) => {
   transform: all 0.2 linear;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   padding-block: 0.5rem;
+  position: relative;
+  z-index: 1000;
 
   @include breakpoint(XXL) {
     grid-template-columns: 1fr;
@@ -82,8 +84,8 @@ const handleClick = (id: string) => {
     grid-area: mobile-menu-wrapper;
     grid-template-areas: ". menu menu" ". action cart";
     position: absolute;
-    left: -100%;
-    top: calc(var(--height-mobile-header) + 1rem);
+    left: -110%;
+    top: 8px;
     width: 100%;
     height: auto;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
@@ -91,13 +93,14 @@ const handleClick = (id: string) => {
     transition: 0.5s all ease-in-out;
     padding-top: 2rem;
 
-    background-color: var(--primary-color-lighter);
+    background-color: var(--primary-color-darker);
 
     @include breakpoint(XXL) {
       background-color: inherit;
       padding-top: initial;
       padding-block: initial;
       grid-template-areas: ". menu ." ". action . " ". cart .";
+      background-color: initial;
     }
 
     &.open {

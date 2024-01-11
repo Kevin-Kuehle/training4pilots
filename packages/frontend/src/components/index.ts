@@ -7,3 +7,4 @@ export { default as Button } from "./buttons/ButtonComponent.vue";
 export { default as ButtonMobileBurger } from "./buttons/ButtonMobileBurger.vue";
 export { default as Cart } from "./cart/cartComponent.vue";
 export { default as ContentLayouter } from "./ContentLayouter/ContentLayouter.vue";
+export { default as SectionWebsiteIntro } from "./SectionWebsiteIntro/SectionWebsiteIntro.vue";

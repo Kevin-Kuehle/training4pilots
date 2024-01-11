@@ -1,7 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { SectionWebsiteIntro } from "@components";
+</script>
 
 <template>
-  <main class="content">
-    <h1 class="content">Home view</h1>
-  </main>
+  <SectionWebsiteIntro />
 </template>

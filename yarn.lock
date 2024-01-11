@@ -191,7 +191,6 @@
     graphql-tag "^2.12.6"
     pinia "^2.1.7"
     primeicons "^6.0.1"
-    primevue "^3.43.0"
     quasar "^2.14.2"
     vue "^3.2.45"
     vue-router "^4.2.5"
@@ -2554,16 +2553,6 @@ pretty-bytes@^5.6.0:
   version "5.6.0"
   resolved "https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz"
   integrity sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==
-
-primeicons@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/primeicons/-/primeicons-6.0.1.tgz"
-  integrity sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==
-
-primevue@^3.43.0:
-  version "3.43.0"
-  resolved "https://registry.npmjs.org/primevue/-/primevue-3.43.0.tgz"
-  integrity sha512-iW2gEbM79v5RzRYIrg010fN1DRr5CIRdMsVMG3pBUCq0rzUGnm/hlzJ9ThDZyJrA0/tEKByAo/Pra56s5PnvqQ==
 
 process@^0.11.10:
   version "0.11.10"
