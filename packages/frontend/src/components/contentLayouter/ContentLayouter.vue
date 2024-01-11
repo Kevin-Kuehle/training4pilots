@@ -11,6 +11,10 @@
   display: grid;
   // prettier-ignore
   grid-template-columns: [fullwidth-start] minmax(25px, 1fr) [content-start] minmax(0,1200px) [content-end] minmax(25px, 1fr) [fullwidth-end];
+
+  > section {
+    grid-row: 1 span;
+  }
 }
 .content {
   grid-area: content;

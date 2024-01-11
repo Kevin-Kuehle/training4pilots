@@ -15,7 +15,8 @@
       "@configs": ["src/assets/configs"],
       "@mocks": ["src/tests/mocks"],
       "@types": ["src/types"],
-      "@utils": ["src/utils"]
+      "@utils": ["src/utils"],
+      "@views": ["src/views"]
     }
   }
 }

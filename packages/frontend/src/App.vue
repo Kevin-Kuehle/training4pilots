@@ -55,9 +55,7 @@ function handleScrolling(scroll) {
 
 <template>
   <Header />
-  <ContentLayouter>
-    <RouterView />
-  </ContentLayouter>
+  <RouterView />
 </template>
 
 <style scoped lang="scss"></style>

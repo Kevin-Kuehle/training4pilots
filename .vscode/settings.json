@@ -23,6 +23,14 @@
         {
             "filePath": "packages\\frontend\\src\\components\\header\\HeaderComponent.vue",
             "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\components\\SectionWebsiteIntro\\SectionWebsiteIntro.vue",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\frontend\\src\\views\\HomeView.vue",
+            "group": "Default"
         }
     ],
     "favorites.sortOrder": "MANUAL"

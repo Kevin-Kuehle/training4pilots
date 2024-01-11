@@ -23,6 +23,7 @@ const isHovering = ref(false);
 
 <template>
   <li
+    @click.self="$router.push(item.path)"
     class="c-desktop-menu-item"
     :class="`c-desktop-menu-item-${index} c-desktop-menu-item-depth c-desktop-menu-item-depth-${depth} ${
       isHovering
@@ -43,9 +44,7 @@ const isHovering = ref(false);
     @mouseenter="isHovering = true"
     @mouseleave="isHovering = false"
   >
-    <router-link :to="item.path">
-      {{ item.name }}
-    </router-link>
+    {{ item.name }}
     <DesktopMenuList v-if="item.subMenu" :depth="depth + 1">
       <DesktopMenuItem
         v-for="(subItem, index) in item.subMenu"

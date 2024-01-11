@@ -37,7 +37,6 @@ const services: string[] = [
         text-color="primary"
         class="text-bold"
         label="Kursangebote"
-        @click="onClick"
       />
     </div>
 
@@ -143,8 +142,7 @@ const services: string[] = [
       list-style: none;
 
       @include breakpoint-desktop-first(XL) {
-        max-width: 200px;
-        border: 1px red dotted;
+        max-width: 90vw;
       }
 
       &__item {

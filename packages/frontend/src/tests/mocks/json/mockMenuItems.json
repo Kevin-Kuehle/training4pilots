@@ -5,7 +5,7 @@
   },
   {
     "name": "Sprechfunkzeugnisse",
-    "path": "/",
+    "path": "/test",
     "subMenu": [
       {
         "name": "BZF-I test",
