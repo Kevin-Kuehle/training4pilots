@@ -8,7 +8,7 @@ defineProps({
   subTitle: {
     type: String,
     required: false,
-    default: "I am a subtitle",
+    default: "",
   },
   layout: {
     type: String,
@@ -20,12 +20,12 @@ defineProps({
 
 <template>
   <section
-    :class="layout === 'content' ? 'content' : ''"
+    :class="layout === 'content' ? 'area-content' : ''"
     class="c-section-default"
   >
     <div class="c-section-default__title">
-      <h2 class="title">{{ pageTitle }}</h2>
-      <h3 class="subtitle">{{ subTitle }}</h3>
+      <h2 class="title text-bold">{{ pageTitle }}</h2>
+      <h3 v-if="subTitle" class="subtitle">{{ subTitle }}</h3>
       <span class="c-section-default__title__element">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,12 +49,13 @@ defineProps({
 
 <styles lang="scss" scoped>
 .c-section-default {
-  padding-block: 3rem;
+  padding-block: 70px;
 
   &__title {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    margin-bottom: 70px;
 
     h2.title,
     h3.subtitle {

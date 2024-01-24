@@ -19,7 +19,7 @@ defineProps({
 
 <template>
   <ContentLayouter>
-    <div class="page-title content">
+    <div class="page-title area-content">
       <h2>{{ pageTitle }}</h2>
     </div>
 

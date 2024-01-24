@@ -13,8 +13,8 @@ const services: string[] = [
 ];
 </script>
 <template>
-  <section class="c-section-website-intro full-width c-content-grid">
-    <div class="c-section-website-intro__content content">
+  <section class="c-section-website-intro area-full-width c-content-grid">
+    <div class="c-section-website-intro__content area-content">
       <div class="c-section-website-intro__content__title">
         <h1>
           Herzlich Willkommen bei
@@ -44,7 +44,7 @@ const services: string[] = [
       <img :src="imageUrl" alt="cat" />
     </div>
 
-    <div class="c-section-website-intro__services content">
+    <div class="c-section-website-intro__services area-content">
       <div class="c-section-website-intro__services__title">
         <span class="text-bold">User </span>
         <span class="text-akcent">Service!</span>

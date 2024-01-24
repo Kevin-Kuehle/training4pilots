@@ -12,15 +12,16 @@
   // prettier-ignore
   grid-template-columns: [fullwidth-start] minmax(25px, 1fr) [content-start] minmax(0,1200px) [content-end] minmax(25px, 1fr) [fullwidth-end];
 
-  > section {
+  > section,
+  div {
     grid-row: 1 span;
   }
 }
-.content {
+.area-content {
   grid-area: content;
 }
 
-.full-width {
+.area-full-width {
   grid-area: fullwidth;
 }
 </style>

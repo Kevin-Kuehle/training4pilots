@@ -23,3 +23,19 @@ body {
 .subtitle {
   color: var(--akzent-color);
 }
+
+.vertical-akzent-line {
+  padding-left: 20px;
+  position: relative;
+  word-wrap: normal;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: var(--akzent-color);
+  }
+}

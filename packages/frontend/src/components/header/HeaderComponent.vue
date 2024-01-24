@@ -59,6 +59,7 @@ const handleClick = (id: string) => {
 
 .c-header {
   width: 100%;
+  padding-block: 0.5rem;
   display: grid;
   background-color: var(--color-header);
   color: white;
@@ -66,8 +67,6 @@ const handleClick = (id: string) => {
   grid-template-rows: var(--height-mobile-header);
   grid-template-areas: "mobileLogo mobileButton" "mobile-menu-wrapper mobile-menu-wrapper";
   transform: all 0.2 linear;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-  padding-block: 0.5rem;
   position: relative;
   z-index: 1000;
 
