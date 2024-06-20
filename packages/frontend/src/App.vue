@@ -1,32 +1,28 @@
 <script setup lang="ts">
 import { Header } from "@components";
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { useDeviceStore } from "@stores";
 import { BREAKPOINTS } from "@configs";
-import { ContentLayouter } from "@components";
 
 const deviceStore = useDeviceStore();
 
-let eventWindowResize;
-let eventWindowScroll;
-
 onMounted(() => {
-  handleWindowResize(window.innerWidth);
-  eventWindowResize = window.addEventListener("resize", () => {
-    handleWindowResize(window.innerWidth);
-  });
-  handleScrolling(window.scrollY);
-  eventWindowScroll = window.addEventListener("scroll", () => {
-    handleScrolling(window.scrollY);
-  });
+  window.addEventListener("resize", handleWindowResize);
+  window.addEventListener("scroll", handleScrolling as EventListener);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("resize", eventWindowResize);
-  window.removeEventListener("scroll", eventWindowScroll);
+  window.removeEventListener("resize", handleWindowResize);
+  window.removeEventListener("scroll", handleScrolling as EventListener);
 });
 
-function handleWindowResize(size) {
+function handleWindowResize(event: UIEvent) {
+  if (!(event.target instanceof Window) || !event.target.innerWidth) return;
+
+  const size = event.target.innerWidth;
+
+  console.log(`devlog: size`, size);
+
   if (size <= BREAKPOINTS.S) {
     deviceStore.breakpoint = BREAKPOINTS.S;
   } else if (size <= BREAKPOINTS.M) {
@@ -42,7 +38,9 @@ function handleWindowResize(size) {
   }
 }
 
-function handleScrolling(scroll) {
+function handleScrolling(event: UIEvent) {
+  const scroll = event.target instanceof Window ? event.target.scrollY : 0;
+
   if (scroll > 0) {
     deviceStore.isScrolled = true;
     deviceStore.scrollTop = scroll;

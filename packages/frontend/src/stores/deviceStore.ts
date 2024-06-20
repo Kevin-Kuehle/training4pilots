@@ -2,9 +2,11 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import { BREAKPOINTS } from "@configs";
 
+type BreakPoint = number | null;
+
 export const useDeviceStore = defineStore("device", {
   state: () => ({
-    breakpoint: ref(null),
+    breakpoint: ref<BreakPoint>(null),
     isScrolled: ref(false),
     scrollTop: ref(0),
   }),

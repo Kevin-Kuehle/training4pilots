@@ -4,10 +4,15 @@ import {
   ContentLayouter,
   Section,
   Banner,
+  ContactForm,
 } from "@components";
 
 const onClick = () => {
   console.log("clicked");
+};
+
+const onSubmitHandler = (data: any) => {
+  console.log("test");
 };
 </script>
 
@@ -74,6 +79,8 @@ const onClick = () => {
         </div>
       </div>
     </Banner>
-    <Section :pageTitle="'Kontakt'"> </Section>
+    <Section :pageTitle="'Kontakt'">
+      <ContactForm @onSubmit="onSubmitHandler" />
+    </Section>
   </ContentLayouter>
 </template>

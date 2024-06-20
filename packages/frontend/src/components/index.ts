@@ -10,3 +10,5 @@ export { default as ContentLayouter } from "./contentLayouter/ContentLayouter.vu
 export { default as SectionWebsiteIntro } from "./SectionWebsiteIntro/SectionWebsiteIntro.vue";
 export { default as Section } from "./SectionDefault/SectionDefault.vue";
 export { default as Banner } from "./banner/BannerComponent.vue";
+export { default as ContactForm } from "./contactForm/ContactForm.vue";
+export { default as Footer } from "./footer/FooterComponent.vue";
