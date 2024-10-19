@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div>
+    <div class="bg-primary">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia et
         aperiam pariatur corporis provident ea quisquam, consequatur id ratione
         dignissimos eaque amet incidunt perspiciatis ipsum? Praesentium nemo

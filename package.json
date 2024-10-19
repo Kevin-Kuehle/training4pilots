@@ -8,7 +8,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "clean": "rm -rf node_modules/ && npm cache clean --force && npm install"
     },
     "keywords": [],
     "author": "",

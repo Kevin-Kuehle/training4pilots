@@ -11,8 +11,8 @@ const handleClick = (id: string) => {
 </script>
 
 <template>
-    <header class="bg-slate-700 w-full border text-white">
-        Ich bin ein Header
+    <header class="bg-primary w-full border text-white">
+        <Menu></Menu>
     </header>
 </template>
 

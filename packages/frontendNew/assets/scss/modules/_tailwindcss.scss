@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    // Add your custom base styles here
+    :root {
+        --color-primary-DEFAULT: 28 36 45;
+    }
+}
